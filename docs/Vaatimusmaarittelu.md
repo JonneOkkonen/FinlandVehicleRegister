@@ -60,6 +60,6 @@ Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen ti
 Joonas tekee vaatimusmäärittelydokumentin
 Jonne tekee loppuraportin
 Kummatkin ohjelmoi toiminnallisuutta
-
+Kummatkin sunnittelee käyttöliittymää
 
 ## Työaikasuunnitelma
