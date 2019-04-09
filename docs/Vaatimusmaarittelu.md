@@ -15,18 +15,51 @@
 
 ## Tekijät
 
+Jonne Okkonen, TTV18S3 (M2235)
+Joonas Niinimäki, TTV18S3 (M3268)
+
 ## Yleiskuvaus
+
+Projekti on Suomen ajoneuvojen rekisteri. Data haetaan [Avoidata.fi](https://www.avoindata.fi/data/fi/dataset/ajoneuvojen-avoin-data/resource/70ecbacc-1878-4641-9b80-7f639c414a42)-sivulta ja sovellukseen data tuodaan itsetoteutetun API rajapinnan kautta.
+Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliittymä käyttäen C# ja XAML kieliä ja UWP-appia.
 
 ## Kohderyhmä
 
+Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa tietoja suomen autorekisteritietokannasta.
+
 ## Kayttöympäristö
+
+Windows 10 Devices.
 
 ## Käyttäjäroolit
 
+Kuluttaja.
+Palvelua hyödyntävät yritykset.
+Valtion virastot.
+Korkeakoulut.
+
 ## Toiminnot
+
+Suomen ajoneuvojen tietokannasta voidaan hakea:
+- Määrä
+- Merkki
+- Malli
+- Vuosiluvut
+- Juttuja (to be continued)
 
 ## Käyttötapaukset
 
+Use cases.
+Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
+Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
+Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
+Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
+
 ## Työnjako
+
+Joonas tekee vaatimusmäärittelydokumentin
+Jonne tekee loppuraportin
+Kummatkin ohjelmoi toiminnallisuutta
+
 
 ## Työaikasuunnitelma
