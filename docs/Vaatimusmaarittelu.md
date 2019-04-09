@@ -25,11 +25,11 @@ Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliit
 
 ## Kohderyhmä
 
-Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa tietoja suomen autorekisteritietokannasta.
+Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa tietoja suomen autorekisteritietokannasta. Yritykset, jotka käyttävät palvelua tiedonhakuun. Instituutit, jotka hakevat tietoa palvelusta.
 
 ## Kayttöympäristö
 
-Windows 10 Devices.
+Windows 10 Devices: Newtonsoft (JSON), C#, VisualStudio, UWP, XAML,
 
 ## Käyttäjäroolit
 
