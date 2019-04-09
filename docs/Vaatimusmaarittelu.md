@@ -29,7 +29,12 @@ Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa t
 
 ## Kayttöympäristö
 
-Windows 10 Devices: Newtonsoft (JSON), C#, VisualStudio, UWP, XAML,
+Windows 10 Devices:
+- Newtonsoft (JSON)
+- C#
+- VisualStudio
+- UWP
+- XAML
 
 ## Käyttäjäroolit
 
@@ -46,6 +51,7 @@ Suomen ajoneuvojen tietokannasta voidaan hakea:
 - Malli
 - Vuosiluvut
 - Juttuja (to be continued)
+- Visualisoidaan graafisesti charteilla.
 
 ## Käyttötapaukset
 
