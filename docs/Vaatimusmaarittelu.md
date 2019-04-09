@@ -56,10 +56,10 @@ Suomen ajoneuvojen tietokannasta voidaan hakea:
 ## Käyttötapaukset
 
 Use cases.
-Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
-Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
-Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
-Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
+- Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
+- Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
+- Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
+- Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
 
 ## Työnjako
 
