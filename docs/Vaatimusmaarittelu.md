@@ -57,9 +57,13 @@ Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen ti
 
 ## Työnjako
 
-Joonas tekee vaatimusmäärittelydokumentin
-Jonne tekee loppuraportin
-Kummatkin ohjelmoi toiminnallisuutta
-Kummatkin sunnittelee käyttöliittymää
+- Joonas tekee vaatimusmäärittelydokumentin
+- Jonne tekee loppuraportin
+- Kummatkin ohjelmoi toiminnallisuutta
+- Kummatkin sunnittelee käyttöliittymää
 
 ## Työaikasuunnitelma
+
+- Työ aloitettiin 3.4.2019
+- Speksaus tehtiin 9.4.2019
+- Tytunteja suunniteltu ~86h
