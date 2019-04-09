@@ -52,7 +52,39 @@ Suomen ajoneuvojen tietokannasta voidaan hakea:
 - Merkki
 - Malli
 - Vuosiluvut
-- Juttuja (to be continued)
+- Rekisteröintipäivä
+- Aikamerkki
+- Väri
+- Ajoneuvoryhmä
+- Ajoneuvonkäyttö
+- Variantti
+- Versio
+- Kayttöönotto päivämäärä
+- Ovienlukumäärä
+- Korityyppi
+- Ohjaamotyyppi
+- Istumapaikkojen lukumäärä
+- Tekninen suurin sallittu koknaismassa
+- Tieliikenteen suurin sallittu kokonaismassa
+- Oma massa
+- Ajoneuvon kokonaispituus
+- Ajoneuvon leveys
+- Ajoneuvon korkeus
+- Käyttövoima
+- Iskutilavuus
+- Suurin nettoteho
+- sylintereiden lukumäärä
+- Ahdin
+- Sähköhybridi
+- Voimanvaljastus ja tehostamistapa
+- Typpihyväksyntänumero
+- Yksittäiskäyttövoima
+- Kunta
+- CO2
+- Matkamittarilukema (km)
+- Alue
+- Valmistesnumero
+- Jarnro (?)
 - Visualisoidaan graafisesti charteilla.
 
 ## Käyttötapaukset
