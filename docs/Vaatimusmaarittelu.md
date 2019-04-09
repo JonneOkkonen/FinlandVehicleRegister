@@ -25,18 +25,25 @@ Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliit
 
 ## Kohderyhmä
 
-Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa tietoja suomen autorekisteritietokannasta.
+- Kohderyhmänä on palvelua hyödyntävä kuluttaja, joka haluaa etsiä autonsa tietoja suomen autorekisteritietokannasta. 
+- Yritykset, jotka käyttävät palvelua tiedonhakuun. 
+- Instituutit, jotka hakevat tietoa palvelusta.
 
 ## Kayttöympäristö
 
-Windows 10 Devices.
+Windows 10 Devices:
+- Newtonsoft (JSON)
+- C#
+- VisualStudio
+- UWP
+- XAML
 
 ## Käyttäjäroolit
 
-Kuluttaja.
-Palvelua hyödyntävät yritykset.
-Valtion virastot.
-Korkeakoulut.
+- Kuluttaja.
+- Palvelua hyödyntävät yritykset.
+- Valtion virastot.
+- Korkeakoulut.
 
 ## Toiminnot
 
@@ -45,21 +52,58 @@ Suomen ajoneuvojen tietokannasta voidaan hakea:
 - Merkki
 - Malli
 - Vuosiluvut
-- Juttuja (to be continued)
+- Rekisteröintipäivä
+- Aikamerkki
+- Väri
+- Ajoneuvoryhmä
+- Ajoneuvonkäyttö
+- Variantti
+- Versio
+- Kayttöönotto päivämäärä
+- Ovienlukumäärä
+- Korityyppi
+- Ohjaamotyyppi
+- Istumapaikkojen lukumäärä
+- Tekninen suurin sallittu koknaismassa
+- Tieliikenteen suurin sallittu kokonaismassa
+- Oma massa
+- Ajoneuvon kokonaispituus
+- Ajoneuvon leveys
+- Ajoneuvon korkeus
+- Käyttövoima
+- Iskutilavuus
+- Suurin nettoteho
+- sylintereiden lukumäärä
+- Ahdin
+- Sähköhybridi
+- Voimanvaljastus ja tehostamistapa
+- Typpihyväksyntänumero
+- Yksittäiskäyttövoima
+- Kunta
+- CO2
+- Matkamittarilukema (km)
+- Alue
+- Valmistesnumero
+- Jarnro (?)
+- Visualisoidaan graafisesti charteilla.
 
 ## Käyttötapaukset
 
 Use cases.
-Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
-Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
-Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
-Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
+- Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
+- Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
+- Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
+- Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
 
 ## Työnjako
 
-Joonas tekee vaatimusmäärittelydokumentin
-Jonne tekee loppuraportin
-Kummatkin ohjelmoi toiminnallisuutta
-
+- Joonas tekee vaatimusmäärittelydokumentin
+- Jonne tekee loppuraportin
+- Kummatkin ohjelmoi toiminnallisuutta
+- Kummatkin sunnittelee käyttöliittymää
 
 ## Työaikasuunnitelma
+
+- Työ aloitettiin 3.4.2019
+- Speksaus tehtiin 9.4.2019
+- Tytunteja suunniteltu ~86h
