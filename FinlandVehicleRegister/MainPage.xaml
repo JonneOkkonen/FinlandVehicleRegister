@@ -7,10 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Background>
-        <AcrylicBrush TintColor="#CC000000" TintOpacity="0.85" BackgroundSource="HostBackdrop"/>
+        <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
 
     <Grid>
-
+        <FlyoutBase.AttachedFlyout>
+            <MenuFlyout/>
+        </FlyoutBase.AttachedFlyout>
+        <Rectangle Margin="0,0,0,0" HorizontalAlignment="Left" Width="300" VerticalAlignment="Stretch">
+            <Rectangle.ContextFlyout>
+                <MenuFlyout>
+                    <MenuFlyoutItem Text="MenuItem"/>
+                </MenuFlyout>
+            </Rectangle.ContextFlyout>
+            <Rectangle.Fill>
+                <AcrylicBrush TintColor="#CC000000" TintOpacity="0.85" BackgroundSource="HostBackdrop"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Page>
