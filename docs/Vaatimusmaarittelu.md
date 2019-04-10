@@ -106,4 +106,4 @@ Use cases.
 
 - Työ aloitettiin 3.4.2019
 - Speksaus tehtiin 9.4.2019
-- Tytunteja suunniteltu ~86h
+- Työtunteja suunniteltu ~86h
