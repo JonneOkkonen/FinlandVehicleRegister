@@ -2,22 +2,22 @@
 ----
   Returns given query result in JSON format. 
 
-* **URL**
+## URL
 
   `https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U?query=SELECT * FROM Ajoneuvo LIMIT 1;`
 
-* **Method:**
+## Method
 
   `GET`
-  
-*  **URL Params**
 
-   **Required:**
+## URL Params
+
+### Required
  
-   `apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U`  
-   `query=SELECT * FROM Ajoneuvo LIMIT 1`
+`apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U`  
+`query=SELECT * FROM Ajoneuvo LIMIT 1`
 
-* **Success Response:**
+## Success Response
 
   * **Code:** 200 <br />
     **Content:** 
@@ -66,17 +66,17 @@
     }]
     ```
  
-* **Error Response:**
+## Error Response
 
   * **Code:** 200 <br />
     **Content:** `[{"error": "Incorrect API - key"}]`
 
-  OR
+       OR
 
   * **Code:** 200 <br />
     **Content:** `[{"error": "Query was empty"}]`
 
-  OR
+       OR
   
   * **Code:** 200 <br />
     **Content:**   
@@ -88,5 +88,3 @@
         
     }]
     ```
-    
-* **Notes:**
