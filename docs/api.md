@@ -69,12 +69,12 @@
 ## Error Response
 
   * **Code:** 200 <br />
-    **Content:** `[{"error": "Incorrect API - key"}]`
+    **Content:** ```json[{"error": "Incorrect API - key"}]```
 
        OR
 
   * **Code:** 200 <br />
-    **Content:** `[{"error": "Query was empty"}]`
+    **Content:** ```json[{"error": "Query was empty"}]```
 
        OR
   
