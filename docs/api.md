@@ -14,8 +14,8 @@
 
    **Required:**
  
-   `apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U`,
-   `query=SELECT * FROM Ajoneuvo`,
+   `apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U`  
+   `query=SELECT * FROM Ajoneuvo`
 
 * **Success Response:**
 
