@@ -48,7 +48,7 @@ Windows 10 Devices:
 ## Toiminnot
 
 Suomen ajoneuvojen tietokannasta voidaan hakea:
-- Määrä
+- Lukumäärä
 - Merkki
 - Malli
 - Vuosiluvut
