@@ -9,20 +9,35 @@
     <Page.Background>
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
-
     <Grid>
-        <FlyoutBase.AttachedFlyout>
-            <MenuFlyout/>
-        </FlyoutBase.AttachedFlyout>
-        <Rectangle Margin="0,0,0,0" HorizontalAlignment="Left" Width="300" VerticalAlignment="Stretch">
-            <Rectangle.ContextFlyout>
-                <MenuFlyout>
-                    <MenuFlyoutItem Text="MenuItem"/>
-                </MenuFlyout>
-            </Rectangle.ContextFlyout>
-            <Rectangle.Fill>
+        <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" Width="300">
+            <Button Margin="0" Width="300" Background="#00000000">
+                <StackPanel Orientation="Horizontal" Width="280">
+                    <SymbolIcon Symbol="Home" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
+                    <TextBlock Text="Homepage" Foreground="White" Margin="10,15,10,15" FontSize="15" />
+                </StackPanel>
+            </Button>
+            <Button Margin="0" Width="300" Background="#00000000">
+                <StackPanel Orientation="Horizontal" Width="280">
+                    <SymbolIcon Symbol="Zoom" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
+                    <TextBlock Text="Search" Foreground="White" Margin="10,15,10,15" FontSize="15" />
+                </StackPanel>
+            </Button>
+            <Button Margin="0" Width="300" Background="#00000000">
+                <StackPanel Orientation="Horizontal" Width="280">
+                    <SymbolIcon Symbol="FourBars" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
+                    <TextBlock Text="Charts" Foreground="White" Margin="10,15,10,15" FontSize="15" />
+                </StackPanel>
+            </Button>
+            <Button Margin="0" Width="300" Background="#00000000">
+                <StackPanel Orientation="Horizontal" Width="280">
+                    <SymbolIcon Symbol="Help" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
+                    <TextBlock Text="Help" Foreground="White" Margin="10,15,10,15" FontSize="15" />
+                </StackPanel>
+            </Button>
+            <StackPanel.Background>
                 <AcrylicBrush TintColor="#CC000000" TintOpacity="0.85" BackgroundSource="HostBackdrop"/>
-            </Rectangle.Fill>
-        </Rectangle>
+            </StackPanel.Background>
+        </StackPanel>
     </Grid>
 </Page>
