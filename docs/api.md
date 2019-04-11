@@ -4,7 +4,7 @@
 
 ## URL
 
-  `https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U?query=SELECT * FROM Ajoneuvo LIMIT 1;`
+  `https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U&query=SELECT * FROM Ajoneuvo LIMIT 1;`
 
 ## Method
 
