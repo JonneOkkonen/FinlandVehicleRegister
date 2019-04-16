@@ -36,6 +36,12 @@ namespace FinlandVehicleRegister.Views
                 case "btnSearch":
                     ((Page)DataContext).Frame.Navigate(typeof(Search), null, new SuppressNavigationTransitionInfo());
                     break;
+                case "btnCharts":
+                    ((Page)DataContext).Frame.Navigate(typeof(Charts), null, new SuppressNavigationTransitionInfo());
+                    break;
+                case "btnHelp":
+                    ((Page)DataContext).Frame.Navigate(typeof(Help), null, new SuppressNavigationTransitionInfo());
+                    break;
             }
         }
     }
