@@ -14,15 +14,66 @@
         <StackPanel Orientation="Horizontal">
             <views:NavigationBar x:Name="NavigationBar"/>
             <StackPanel>
-                <StackPanel Background="DarkGray" Height="200" Width="200" Margin="0, 20, 0, 0">
+                <StackPanel Background="DarkGray" Height="210" Width="210" Margin="0, 20, 0, 0">
                     <TextBlock Text="Search" Margin="70, 5, 0, 0"></TextBlock>
-                    <ComboBox Height="30" Width="70" HorizontalAlignment="Left" Margin="8, 30, 0, 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Model" Margin="10, 8, 0, 0"/>
+                        <ComboBox Height="30" Width="70" Margin="75, 5, 5, 5">
+                            <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="First register date" Margin="10, 8, 0, 0"/>
+                        <ComboBox Height="30" Width="70" Margin="5">
+                            <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Deployment date" Margin="10, 8, 0, 0"/>
+                        <ComboBox Height="30" Width="70" Margin="5">
+                            <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Serial Numbef" Margin="10, 8, 0, 0"/>
+                        <ComboBox Height="30" Width="70" Margin="25,5,5,5">
+                            <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                            <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Background="DarkBlue">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Serial Numbef" Margin="10, 8, 0, 0"/>
+                    <ComboBox Height="30" Width="70" Margin="25,5,5,5">
                         <ComboBoxItem Content="Item #1"></ComboBoxItem>
                         <ComboBoxItem Content="Item #2"></ComboBoxItem>
                         <ComboBoxItem Content="Item #3"></ComboBoxItem>
                         <ComboBoxItem Content="Item #4"></ComboBoxItem>
                     </ComboBox>
-                    <StackPanel></StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Background="DarkGreen">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Serial Numbef" Margin="10, 8, 0, 0"/>
+                    <ComboBox Height="30" Width="70" Margin="25,5,5,5">
+                        <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                    </ComboBox>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
