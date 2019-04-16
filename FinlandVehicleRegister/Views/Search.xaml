@@ -13,7 +13,18 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="Search Page" VerticalAlignment="Top" Foreground="White"></Button>
+            <StackPanel>
+                <StackPanel Background="DarkGray" Height="200" Width="200" Margin="0, 20, 0, 0">
+                    <TextBlock Text="Search" Margin="70, 5, 0, 0"></TextBlock>
+                    <ComboBox Height="30" Width="70" HorizontalAlignment="Left" Margin="8, 30, 0, 0">
+                        <ComboBoxItem Content="Item #1"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #2"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #3"></ComboBoxItem>
+                        <ComboBoxItem Content="Item #4"></ComboBoxItem>
+                    </ComboBox>
+                    <StackPanel></StackPanel>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
