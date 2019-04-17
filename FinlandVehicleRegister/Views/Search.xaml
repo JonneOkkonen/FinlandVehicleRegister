@@ -7,133 +7,119 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:FinlandVehicleRegister.Views"
     mc:Ignorable="d">
-    <Page.Background>
-    <SolidColorBrush Color="#FF111010"></SolidColorBrush>
-    </Page.Background>
-    <Grid>
-        <StackPanel Orientation="Horizontal">
-            <views:NavigationBar x:Name="NavigationBar"/>
-            <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                        <StackPanel Background="DarkGray" Height="210" Width="210" Margin="0, 20, 0, 0">
-                            <TextBlock Text="Search" Margin="70, 5, 0, 0"></TextBlock>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Model" Margin="10, 8, 0, 0"/>
-                                <ComboBox Height="30" Width="70" Margin="75, 5, 5, 5">
-                                    <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                                </ComboBox>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="First register date" Margin="10, 8, 0, 0"/>
-                                <ComboBox Height="30" Width="70" Margin="5">
-                                    <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                                </ComboBox>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Deployment date" Margin="10, 8, 0, 0"/>
-                                <ComboBox Height="30" Width="70" Margin="5">
-                                    <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                                </ComboBox>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Serial Number" Margin="10, 8, 0, 0"/>
-                                <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                    <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                    <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                                </ComboBox>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Background="DarkBlue" Margin="5, 20, 0, 0">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                    </StackPanel>
-                    <StackPanel Background="DarkGreen" Margin="5, 20, 0, 0">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Serial Numbef" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Matkamittarilukema" Margin="10, 8, 0, 0"/>
-                            <ComboBox Height="30" Width="70" Margin="25,5,5,5">
-                                <ComboBoxItem Content="Item #1"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #2"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #3"></ComboBoxItem>
-                                <ComboBoxItem Content="Item #4"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+	<Page.Background>
+		<SolidColorBrush Color="#FF111010"></SolidColorBrush>
+	</Page.Background>
+	<Grid>
+		<RelativePanel>
+			<views:NavigationBar x:Name="NavigationBar"/>
+			<ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True">
+				<!--1st box-->
+				<StackPanel Margin="0" MinWidth="400" MaxWidth='1000' HorizontalAlignment="Left">
+					<TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"></TextBlock>
+					<StackPanel>
+						<TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="First register date:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<StackPanel Orientation="Horizontal">
+							<TextBox x:Name="txtFirstRegDate1" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="160"></TextBox>
+							<TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 0"></TextBlock>
+							<TextBox x:Name="txtFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="160"></TextBox>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Deployment date:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="txtDeployDate" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Serial Number:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="txtSerialNmb" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Color:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbColor" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Car class:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbCarClass" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Co2:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="txtCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Frame Type" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbFrameType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Mass:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="txtMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Fuel type" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="cbFuelType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Cylinder capacity:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="txtCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="Net Power:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="tbNetPower" Background="White" Margin="10,0,10,10" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<CheckBox x:Name="ckbElecHybrid" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" Content="Electric Hybrid" RequestedTheme="Dark"/>
+					<StackPanel>
+						<TextBlock Text="Gears:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<TextBox x:Name="tbGears" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+					</StackPanel>
+					<StackPanel>
+						<TextBlock Text="County:" Margin="10, 8, 0, 5" Foreground="White"/>
+						<ComboBox x:Name="txtCounty" Height="30" Margin="10,0,10,20" HorizontalAlignment="Stretch" Background="White"  VerticalAlignment="Top">
+							<ComboBoxItem Content="Item #1"></ComboBoxItem>
+							<ComboBoxItem Content="Item #2"></ComboBoxItem>
+							<ComboBoxItem Content="Item #3"></ComboBoxItem>
+							<ComboBoxItem Content="Item #4"></ComboBoxItem>
+						</ComboBox>
+						<Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top"></Button>
+					</StackPanel>
+				</StackPanel>
+			</ScrollViewer>
+		</RelativePanel>
+	</Grid>
 </Page>

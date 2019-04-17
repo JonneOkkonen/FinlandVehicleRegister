@@ -15,5 +15,8 @@
             <views:NavigationBar x:Name="NavigationBar"/>
             <Button Content="Charts" VerticalAlignment="Top" Foreground="White"></Button>
         </StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<Image Source="{Binding imgPieChart}"></Image>
+		</StackPanel>
     </Grid>
 </Page>
