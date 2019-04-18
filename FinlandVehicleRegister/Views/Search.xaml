@@ -113,7 +113,7 @@
 							<ComboBoxItem Content="Item #3"></ComboBoxItem>
 							<ComboBoxItem Content="Item #4"></ComboBoxItem>
 						</ComboBox>
-						<Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top"></Button>
+						<Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click"></Button>
 					</StackPanel>
 				</StackPanel>
 			</ScrollViewer>

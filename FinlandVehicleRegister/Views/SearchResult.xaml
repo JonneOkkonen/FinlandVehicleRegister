@@ -13,7 +13,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="Help Page" VerticalAlignment="Top" Foreground="White"></Button>
+            <Button Content="SearchResult Page" VerticalAlignment="Top" Foreground="White"></Button>
         </StackPanel>
     </Grid>
 </Page>

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -39,6 +40,11 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar Datacontext to this page
             NavigationBar.DataContext = this;
+        }
+
+        private void BtnDoSearch_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
         }
     }
 }
