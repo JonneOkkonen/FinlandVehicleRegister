@@ -14,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
-using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +22,9 @@ namespace FinlandVehicleRegister.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Search : Page
+    public sealed partial class Charts : Page
     {
-        public Search()
+        public Charts()
         {
             this.InitializeComponent();
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -38,13 +37,8 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonHoverBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             titleBar.ButtonPressedForegroundColor = Windows.UI.Colors.White;
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
-            // Set NavigationBar Datacontext to this page
+            // Set NavigationBar DataContext to this page
             NavigationBar.DataContext = this;
-        }
-
-        private void BtnDoSearch_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
         }
     }
 }

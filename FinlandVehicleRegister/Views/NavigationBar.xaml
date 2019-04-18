@@ -22,13 +22,13 @@
                     <TextBlock Text="Search" Foreground="White" Margin="10,15,10,15" FontSize="15" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnCharts" Margin="0" Width="300" Background="#00000000">
+            <Button x:Name="btnCharts" Margin="0" Width="300" Background="#00000000" Click="MenuItem_Click">
                 <StackPanel Orientation="Horizontal" Width="280">
                     <SymbolIcon Symbol="FourBars" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
                     <TextBlock Text="Charts" Foreground="White" Margin="10,15,10,15" FontSize="15" />
                 </StackPanel>
             </Button>
-            <Button x:Name="btnHelp" Margin="0" Width="300" Background="#00000000">
+            <Button x:Name="btnHelp" Margin="0" Width="300" Background="#00000000" Click="MenuItem_Click">
                 <StackPanel Orientation="Horizontal" Width="280">
                     <SymbolIcon Symbol="Help" Margin="10,15,10,15" Height="20" Width="20" Foreground="White"/>
                     <TextBlock Text="Help" Foreground="White" Margin="10,15,10,15" FontSize="15" />
