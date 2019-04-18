@@ -22,9 +22,9 @@ namespace FinlandVehicleRegister.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Help : Page
+    public sealed partial class SearchResult : Page
     {
-        public Help()
+        public SearchResult()
         {
             this.InitializeComponent();
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -38,7 +38,7 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedForegroundColor = Windows.UI.Colors.White;
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar DataContext to this page
-            // Set NavigationBar Datacontext to this page
+            //Change view to this page
             NavigationBar.DataContext = this;
         }
     }

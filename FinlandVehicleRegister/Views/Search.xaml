@@ -15,17 +15,14 @@
 			<views:NavigationBar x:Name="NavigationBar"/>
 			<ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True">
 				<!--1st box-->
-				<StackPanel Margin="0" MinWidth="400" MaxWidth='1000' HorizontalAlignment="Left">
+				<StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
 					<TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"></TextBlock>
-					<StackPanel>
-						<TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
-						<ComboBox x:Name="cbModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch">
-							<ComboBoxItem Content="Item #1"></ComboBoxItem>
-							<ComboBoxItem Content="Item #2"></ComboBoxItem>
-							<ComboBoxItem Content="Item #3"></ComboBoxItem>
-							<ComboBoxItem Content="Item #4"></ComboBoxItem>
-						</ComboBox>
-					</StackPanel>
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
+                            <TextBox x:Name="txtModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
 					<StackPanel>
 						<TextBlock Text="First register date:" Margin="10, 8, 0, 5" Foreground="White"/>
 						<StackPanel Orientation="Horizontal">
