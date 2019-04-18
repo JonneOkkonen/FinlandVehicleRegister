@@ -85,7 +85,16 @@
         "error": "Query was empty"
     }]
     ```
+    
+       OR
 
+  * **Code:** 200 <br />
+    **Content:** 
+    ```json
+    [{
+        "error": "0 results from query"
+    }]
+    ```
        OR
   
   * **Code:** 200 <br />
