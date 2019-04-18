@@ -10,8 +10,46 @@ namespace FinlandVehicleRegister.Core
     {
         public enum Fields
         {
-            merkki,
-            valmistenumero
+            ID,
+            ajoneuvoluokka,
+            ensirekisterointipvm,
+            ajoneuvoryhma,
+            ajoneuvonkaytto,
+            variantti,
+            versio,
+            kayttoonottopvm,
+            vari,
+            ovienLukumaara,
+            korityyppi,
+            ohjaamotyyppi,
+            istumapaikkojenLkm,
+            omamassa,
+            teknSuurSallKokmassa,
+            tieliikSuurSallKokmassa,
+            ajonKokPituus,
+            ajonLeveys,
+            ajonKorkeus,
+            kayttovoima,
+            iskutilavuus,
+            suurinNettoteho,
+            sylintereidenLkm,
+            ahdin,
+            sahkohybridi,
+            sahkohybridiluokka,
+            merkkiSelvakielinen,
+            mallimerkinta,
+            vaihteisto,
+            vaihteidenLkm,
+            kaupallinenNimi,
+            voimanvalJaTehostamistapa,
+            tyyppihyvaksyntanro,
+            yksittaisKayttovoima,
+            kunta,
+            Co2,
+            matkamittarilukema,
+            alue,
+            valmistenumero2,
+            jarnro
         };
 
         public Fields FieldName { get; set; }

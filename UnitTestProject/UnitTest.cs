@@ -14,11 +14,11 @@ namespace UnitTestProject
         public void TestSelectMultipleBuild()
         {
             QueryBuilder query = new QueryBuilder();
-            query.AddField(Field.Fields.merkki, "BMW");
-            query.AddField(Field.Fields.valmistenumero, "123456789");
+            query.AddField(Field.Fields.merkkiSelvakielinen, "BMW");
+            query.AddField(Field.Fields.valmistenumero2, "123456789");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Ajoneuvo WHERE merkki='BMW', valmistenumero='123456789';";
+            string expected = "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen='BMW', valmistenumero2='123456789';";
             Assert.AreEqual(expected, actual);
         }
 
@@ -27,10 +27,10 @@ namespace UnitTestProject
         public void TestSelectSingleBuild()
         {
             QueryBuilder query = new QueryBuilder();
-            query.AddField(Field.Fields.merkki, "BMW");
+            query.AddField(Field.Fields.merkkiSelvakielinen, "BMW");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Ajoneuvo WHERE merkki='BMW';";
+            string expected = "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen='BMW';";
             Assert.AreEqual(expected, actual);
         }
 
