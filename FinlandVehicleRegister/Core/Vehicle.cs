@@ -9,87 +9,89 @@ namespace FinlandVehicleRegister.Core
 {
     public class Vehicle
     {
-        [JsonProperty("ajoneuvoluokka_koodi")]
+        [JsonProperty("ajoneuvoluokka_koodi", NullValueHandling = NullValueHandling.Ignore)]
         public string AjoneuvoLuokkaKoodi { get; set; }
-        [JsonProperty("ajoneuvoluokka_lyhytselite")]
+        [JsonProperty("ajoneuvoluokka_lyhytselite", NullValueHandling = NullValueHandling.Ignore)]
         public string AjoneuvoLuokkaLyhytselite { get; set; }
-        [JsonProperty("ajoneuvoluokka_pitkaselite")]
+        [JsonProperty("ajoneuvoluokka_pitkaselite", NullValueHandling = NullValueHandling.Ignore)]
         public string AjoneuvoLuokkaPitkaselite { get; set; }
-        [JsonProperty("ensirekisterointipvm")]
+        [JsonProperty("ensirekisterointipvm", NullValueHandling = NullValueHandling.Ignore)]
         public string Ensirekisterointipvm { get; set; }
-        [JsonProperty("ajoneuvoryhma")]
+        [JsonProperty("ajoneuvoryhma", NullValueHandling = NullValueHandling.Ignore)]
         public string AjoneuvoRyhma { get; set; }
-        [JsonProperty("ajoneuvonkaytto")]
+        [JsonProperty("ajoneuvonkaytto", NullValueHandling = NullValueHandling.Ignore)]
         public string AjoneuvonKaytto { get; set; }
-        [JsonProperty("variantti")]
+        [JsonProperty("variantti", NullValueHandling = NullValueHandling.Ignore)]
         public string Variantti { get; set; }
-        [JsonProperty("versio")]
+        [JsonProperty("versio", NullValueHandling = NullValueHandling.Ignore)]
         public string Versio { get; set; }
-        [JsonProperty("kayttoonottopvm")]
+        [JsonProperty("kayttoonottopvm", NullValueHandling = NullValueHandling.Ignore)]
         public string Kayttoonottopvm { get; set; }
-        [JsonProperty("vari")]
+        [JsonProperty("vari", NullValueHandling = NullValueHandling.Ignore)]
         public string Vari { get; set; }
-        [JsonProperty("ovienLukumaara")]
+        [JsonProperty("ovienLukumaara", NullValueHandling = NullValueHandling.Ignore)]
         public int OvienLukumaara { get; set; }
-        [JsonProperty("korityyppi_koodi")]
+        [JsonProperty("korityyppi_koodi", NullValueHandling = NullValueHandling.Ignore)]
         public string KorityyppiKoodi { get; set; }
-        [JsonProperty("korityyppi_pitkaselite")]
+        [JsonProperty("korityyppi_pitkaselite", NullValueHandling = NullValueHandling.Ignore)]
         public string KorityyppiPitkaselite { get; set; }
-        [JsonProperty("ohjaamotyyppi")]
+        [JsonProperty("ohjaamotyyppi", NullValueHandling = NullValueHandling.Ignore)]
         public string Ohjaamotyyppi { get; set; }
-        [JsonProperty("istumapaikkojenLkm")]
+        [JsonProperty("istumapaikkojenLkm", NullValueHandling = NullValueHandling.Ignore)]
         public int IstumapaikkojenLkm { get; set; }
-        [JsonProperty("omamassa")]
+        [JsonProperty("omamassa", NullValueHandling = NullValueHandling.Ignore)]
         public int OmaMassa { get; set; }
-        [JsonProperty("teknSuurSallKokmassa")]
+        [JsonProperty("teknSuurSallKokmassa", NullValueHandling = NullValueHandling.Ignore)]
         public int TeknSuurSallKokmassa { get; set; }
-        [JsonProperty("tieliikSuurSallKokmassa")]
+        [JsonProperty("tieliikSuurSallKokmassa", NullValueHandling = NullValueHandling.Ignore)]
         public int TieLiikSuurSallKokmassa { get; set; }
-        [JsonProperty("ajonKokPituus")]
+        [JsonProperty("ajonKokPituus", NullValueHandling = NullValueHandling.Ignore)]
         public int AjonKokPituus { get; set; }
-        [JsonProperty("ajonLeveys")]
+        [JsonProperty("ajonLeveys", NullValueHandling = NullValueHandling.Ignore)]
         public int AjonLeveys { get; set; }
-        [JsonProperty("ajonKorkeus")]
+        [JsonProperty("ajonKorkeus", NullValueHandling = NullValueHandling.Ignore)]
         public int AjonKorkeus { get; set; }
-        [JsonProperty("kayttovoima")]
+        [JsonProperty("kayttovoima", NullValueHandling = NullValueHandling.Ignore)]
         public string Kayttovoima { get; set; }
-        [JsonProperty("iskutilavuus")]
+        [JsonProperty("iskutilavuus", NullValueHandling = NullValueHandling.Ignore)]
         public int Iskutilavuus { get; set; }
-        [JsonProperty("suurinNettoteho")]
+        [JsonProperty("suurinNettoteho", NullValueHandling = NullValueHandling.Ignore)]
         public int SuurinNettoteho { get; set; }
-        [JsonProperty("sylintereidenLkm")]
+        [JsonProperty("sylintereidenLkm", NullValueHandling = NullValueHandling.Ignore)]
         public int SylintereidenLkm { get; set; }
-        [JsonProperty("ahdin")]
+        [JsonProperty("ahdin", NullValueHandling = NullValueHandling.Ignore)]
         public int Ahdin { get; set; }
-        [JsonProperty("sahkohybridi")]
+        [JsonProperty("sahkohybridi", NullValueHandling = NullValueHandling.Ignore)]
         public int Sahkohybridi { get; set; }
-        [JsonProperty("sahkohybridinluokka")]
+        [JsonProperty("sahkohybridinluokka", NullValueHandling = NullValueHandling.Ignore)]
         public string Sahkohybridinluokka { get; set; }
-        [JsonProperty("merkkiSelvakielinen")]
+        [JsonProperty("merkkiSelvakielinen", NullValueHandling = NullValueHandling.Ignore)]
         public string Merkki { get; set; }
-        [JsonProperty("mallimerkinta")]
+        [JsonProperty("mallimerkinta", NullValueHandling = NullValueHandling.Ignore)]
         public string Malli { get; set; }
-        [JsonProperty("vaihteisto")]
+        [JsonProperty("vaihteisto", NullValueHandling = NullValueHandling.Ignore)]
         public string Vaihteisto { get; set; }
-        [JsonProperty("vaihteidenLkm")]
+        [JsonProperty("vaihteidenLkm", NullValueHandling = NullValueHandling.Ignore)]
         public string VaihteidenLkm { get; set; }
-        [JsonProperty("kaupallinenNimi")]
+        [JsonProperty("kaupallinenNimi", NullValueHandling = NullValueHandling.Ignore)]
         public string KaupallinenNimi { get; set; }
-        [JsonProperty("voimanvalJaTehostamistapa")]
+        [JsonProperty("voimanvalJaTehostamistapa", NullValueHandling = NullValueHandling.Ignore)]
         public string VoimanvalJaTehostamistapa { get; set; }
-        [JsonProperty("tyyppihyvaksyntanro")]
+        [JsonProperty("tyyppihyvaksyntanro", NullValueHandling = NullValueHandling.Ignore)]
         public string Tyyppihyvaksyntanro { get; set; }
-        [JsonProperty("yksittaisKayttovoima")]
+        [JsonProperty("yksittaisKayttovoima", NullValueHandling = NullValueHandling.Ignore)]
         public string YksittaisKayttovoima { get; set; }
-        [JsonProperty("kunta")]
+        [JsonProperty("kunta", NullValueHandling = NullValueHandling.Ignore)]
         public string Kunta { get; set; }
-        [JsonProperty("Co2")]
+        [JsonProperty("Co2", NullValueHandling = NullValueHandling.Ignore)]
         public int Co2 { get; set; }
-        [JsonProperty("matkamittarilukema")]
+        [JsonProperty("matkamittarilukema", NullValueHandling = NullValueHandling.Ignore)]
         public int Matkamittarilukema { get; set; }
-        [JsonProperty("alue")]
+        [JsonProperty("alue", NullValueHandling = NullValueHandling.Ignore)]
         public string Alue { get; set; }
-        [JsonProperty("valmistenumero2")]
+        [JsonProperty("valmistenumero2", NullValueHandling = NullValueHandling.Ignore)]
         public string Valmistenumero { get; set; }
+        [JsonProperty("error", NullValueHandling = NullValueHandling.Ignore)]
+        public string Error { get; set; }
     }
 }

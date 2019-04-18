@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\Exceptions.cs" />
     <Compile Include="Core\Field.cs" />
     <Compile Include="Core\QueryBuilder.cs" />
     <Compile Include="Core\Vehicle.cs" />
