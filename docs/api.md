@@ -4,7 +4,7 @@
 
 ## URL
 
-  `https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U&query=SELECT * FROM Ajoneuvo LIMIT 1;`
+  `https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U&query=SELECT * FROM Vehicle LIMIT 1;`
 
 ## Method
 
@@ -15,7 +15,7 @@
 ### Required
  
 `apiKey=9rP91EIhlOfiVVO5SZ1Bf2311U`  
-`query=SELECT * FROM Ajoneuvo LIMIT 1`
+`query=SELECT * FROM Vehicle LIMIT 1`
 
 ## Success Response
 
@@ -23,46 +23,48 @@
     **Content:** 
     ```json
     [{
-    	"ID": "1",
-    	"ajoneuvoluokka": "MUU",
-    	"ensirekisterointipvm": null,
-    	"ajoneuvoryhma": "21",
-    	"ajoneuvonkaytto": "1",
-    	"variantti": null,
-    	"versio": null,
-    	"kayttoonottopvm": "1967-01-01",
+    	"ID": "5486",
+    	"ajoneuvoluokka_koodi": "L3e",
+    	"ajoneuvoluokka_lyhytselite": "MoottoripyÃ¶rÃ¤",
+    	"ajoneuvoluokka_pitkaselite": "KaksipyÃ¶rÃ¤inen ajoneuvo, Vi > 50 cm3 ja\/tai v > 45 km\/h,",
+    	"ensirekisterointipvm": "2007-03-16",
+    	"ajoneuvoryhma": "2-pyÃ¶rÃ¤inen",
+    	"ajoneuvonkaytto": "Yksityinen",
+    	"variantti": "D4F",
+    	"versio": "GHAAB0",
+    	"kayttoonottopvm": "2007-03-16",
     	"vari": null,
     	"ovienLukumaara": null,
-    	"korityyppi": null,
-    	"ohjaamotyyppi": null,
-    	"istumapaikkojenLkm": "1",
-    	"omamassa": "210",
-    	"teknSuurSallKokmassa": null,
-    	"tieliikSuurSallKokmassa": null,
-    	"ajonKokPituus": null,
-    	"ajonLeveys": null,
+    	"korityyppi_koodi": null,
+    	"korityyppi_pitkaselite": null,
+    	"ohjaamotyyppi": "Avo-ohjaamo",
+    	"istumapaikkojenLkm": "2",
+    	"omamassa": "305",
+    	"teknSuurSallKokmassa": "492",
+    	"tieliikSuurSallKokmassa": "492",
+    	"ajonKokPituus": "2360",
+    	"ajonLeveys": "940",
     	"ajonKorkeus": null,
-    	"kayttovoima": "1",
-    	"iskutilavuus": "590",
-    	"suurinNettoteho": null,
-    	"sylintereidenLkm": null,
+    	"kayttovoima": "Bensiini",
+    	"iskutilavuus": "1584",
+    	"suurinNettoteho": "56",
+    	"sylintereidenLkm": "2",
     	"ahdin": null,
     	"sahkohybridi": null,
     	"sahkohybridinluokka": null,
-    	"merkkiSelvakielinen": "BMW",
-    	"mallimerkinta": "R60\/590",
+    	"merkkiSelvakielinen": "Harley-Davidson",
+    	"mallimerkinta": "FXDB-GX4\/1584",
     	"vaihteisto": null,
-    	"vaihteidenLkm": null,
-    	"kaupallinenNimi": null,
-    	"voimanvalJaTehostamistapa": null,
-    	"tyyppihyvaksyntanro": null,
+    	"vaihteidenLkm": "6",
+    	"kaupallinenNimi": "FXDB DYNA STREET BOB",
+    	"voimanvalJaTehostamistapa": "2",
+    	"tyyppihyvaksyntanro": "e4*2002\/24*0414*02",
     	"yksittaisKayttovoima": "1",
-    	"kunta": "49",
+    	"kunta": "Helsinki",
     	"Co2": null,
     	"matkamittarilukema": null,
-    	"alue": "27",
-    	"valmistenumero2": null,
-    	"jarnro": "1"
+    	"alue": "4",
+    	"valmistenumero2": null
     }]
     ```
  
