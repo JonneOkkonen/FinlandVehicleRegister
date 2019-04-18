@@ -98,6 +98,7 @@
     <Compile Include="Core\Field.cs" />
     <Compile Include="Core\QueryBuilder.cs" />
     <Compile Include="Core\Vehicle.cs" />
+    <Compile Include="Core\VehicleAPI.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
