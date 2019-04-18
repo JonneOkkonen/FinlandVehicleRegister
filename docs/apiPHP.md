@@ -24,7 +24,10 @@ if($_GET['apiKey'] == $apiKey) {
                         while($row = $result->fetch_assoc()) {
                                 $result_arr[] = $row;
                         }
-                        echo json_encode($result_arr);
+                        echo json_encode($result_arr, JSON_UNESCAPED_UNICODE);
+                }
+                else {
+                        echo '[{"error": "0 results from query"}]';
                 }
         }else {
                 echo '[{"error": "Query was empty"}]';
