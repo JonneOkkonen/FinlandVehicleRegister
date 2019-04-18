@@ -12,7 +12,7 @@
 	</Page.Background>
 	<Grid>
 		<RelativePanel>
-			<views:NavigationBar x:Name="NavigationBar"/>
+			<views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
 			<ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True">
 				<!--1st box-->
 				<StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
