@@ -19,7 +19,7 @@ namespace FinlandVehicleRegister.Core
             }
         }
         private string queryString { get; set; }
-        private readonly string TableName = "Ajoneuvo";
+        private readonly string TableName = "Vehicle";
         private List<Field> fields = new List<Field>();
         public enum QueryType
         {
@@ -43,12 +43,12 @@ namespace FinlandVehicleRegister.Core
                         foreach (Field f in fields)
                         {
                             if (f == last)
-                                queryString += $"{f.FieldName}='{f.Value}';";
+                                queryString += $"{f.FieldName}='{f.Value}' LIMIT 100;";
                             else
-                                queryString += $"{f.FieldName}='{f.Value}', ";
+                                queryString += $"{f.FieldName}='{f.Value}' AND ";
                         }
                     }
-                    else queryString += ";";
+                    else queryString += " LIMIT 100;";
                     break;   
             }
         }

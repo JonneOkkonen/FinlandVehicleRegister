@@ -1,13 +1,15 @@
-﻿
-using System;
+﻿using FinlandVehicleRegister.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FinlandVehicleRegister.Core;
-using System.Diagnostics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace UnitTestProject
 {
-    [TestClass]
-    public class UnitTest1
+    [TestClass()]
+    public class QueryBuilderTests
     {
         [TestMethod()]
         // Build SELECT Query with Multiple fields
@@ -18,7 +20,7 @@ namespace UnitTestProject
             query.AddField(Field.Fields.valmistenumero2, "123456789");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen='BMW', valmistenumero2='123456789';";
+            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen='BMW' AND valmistenumero2='123456789' LIMIT 100;";
             Assert.AreEqual(expected, actual);
         }
 
@@ -30,7 +32,7 @@ namespace UnitTestProject
             query.AddField(Field.Fields.merkkiSelvakielinen, "BMW");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen='BMW';";
+            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen='BMW' LIMIT 100;";
             Assert.AreEqual(expected, actual);
         }
 
@@ -41,7 +43,7 @@ namespace UnitTestProject
             QueryBuilder query = new QueryBuilder();
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Ajoneuvo;";
+            string expected = "SELECT * FROM Vehicle LIMIT 100;";
             Assert.AreEqual(expected, actual);
         }
     }
