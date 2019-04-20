@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,12 @@ namespace FinlandVehicleRegister.Core
     {
         private static readonly string APIKey = "9rP91EIhlOfiVVO5SZ1Bf2311U";
         public static string URL = $"https://www.jonneokkonen.com/api/ajoneuvorekisteri.php?apiKey={APIKey}&query=";
+
+        /// <summary>
+        /// Load JSON string from API
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static string LoadData(string query)
         {
             try
@@ -28,6 +35,11 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
+        /// <summary>
+        /// Get vehicles from API (limit 100)
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static List<Vehicle> GetVehicles(string query)
         {
             try
@@ -52,6 +64,36 @@ namespace FinlandVehicleRegister.Core
                 return vehicles;
             }
             catch
+            {
+                throw;
+            }
+        }
+
+        public static List<Option> GetOptions(QueryBuilder.Table table)
+        {
+            try
+            {
+                List<Option> values = new List<Option>();
+                QueryBuilder query = new QueryBuilder();
+                query.Build(QueryBuilder.QueryType.Select, table, 500);
+                string json = LoadData(query.QueryString);
+                values = JsonConvert.DeserializeObject<List<Option>>(json);
+                if (values[0].Error != null)
+                {
+                    switch (values[0].Error)
+                    {
+                        case "Incorrect API - key":
+                            throw new IncorrectAPIKeyException("VehicleAPI: Incorrect API-key" + query.QueryString);
+                        case "Query was empty":
+                            throw new QueryEmptyException("VehicleAPI: Query was empty");
+                        case "0 results from query":
+                            throw new ZeroResultsFromQueryException("VehicleAPI: 0 results from query");
+                        default:
+                            throw new MySQLErrorException($"VehicleAPI: MySQL Error: {values[0].Error}");
+                    }
+                }
+                return values;
+            }catch
             {
                 throw;
             }

@@ -37,13 +37,29 @@ namespace UnitTestProject
         }
 
         [TestMethod()]
+        // Test Get Options
+        public void TestGetOptions()
+        {
+            List<Option> values = VehicleAPI.GetOptions(QueryBuilder.Table.VOhjaamotyyppi);
+            string actual1 = values[0].Value;
+            string expected1 = "Umpiohjaamo";
+            Assert.AreEqual(expected1, actual1);
+            string actual2 = values[1].Value;
+            string expected2 = "Suojakehys";
+            Assert.AreEqual(expected2, actual2);
+            string actual3 = values[2].Value;
+            string expected3 = "Jatko-ohjaamo";
+            Assert.AreEqual(expected3, actual3);
+            string actual4 = values[3].Value;
+            string expected4 = "Avo-ohjaamo";
+            Assert.AreEqual(expected4, actual4);
+        }
+
+        [TestMethod()]
         [ExpectedException(typeof(QueryEmptyException))]
         public void TestQueryEmptyError()
         {
             List<Vehicle> vehicles = VehicleAPI.GetVehicles("");
-            string actual = vehicles[0].Error;
-            string expected = "Query was empty";
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
