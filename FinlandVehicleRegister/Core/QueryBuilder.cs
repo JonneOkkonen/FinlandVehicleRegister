@@ -40,6 +40,7 @@ namespace FinlandVehicleRegister.Core
             ChartAjoneuvoluokka,
             ChartAjoneuvonKaytto,
             ChartKayttovoima,
+            ChartKorityyppi,
             Ajoneuvo
         }
         

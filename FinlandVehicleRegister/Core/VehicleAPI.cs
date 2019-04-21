@@ -99,14 +99,21 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
-        public static List<ChartItem> GetChartData(QueryBuilder.Table table)
+        public static List<ChartItem> GetChartData(QueryBuilder.Table table, string customQuery = null)
         {
             try
             {
                 List<ChartItem> values = new List<ChartItem>();
                 QueryBuilder query = new QueryBuilder();
                 query.Build(QueryBuilder.QueryType.Select, table, 500);
-                string json = LoadData(query.QueryString);
+                string json = "";
+                if(customQuery != null)
+                {
+                    json = LoadData(customQuery);
+                }else
+                {
+                    json = LoadData(query.QueryString);
+                }
                 values = JsonConvert.DeserializeObject<List<ChartItem>>(json);
                 if (values[0].Error != null)
                 {

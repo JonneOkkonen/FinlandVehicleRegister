@@ -54,11 +54,11 @@ namespace FinlandVehicleRegister.Views
             cbType.Items.Add("Sähköhybridien määrä");
             cbType.Items.Add("Merkki");
 
-            // Load Values to Vehicle Class Combobox
-            //VehicleClasses = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
-            //cbVehicleClass.ItemsSource = VehicleClasses;
-            //cbVehicleClass.SelectedValuePath = "Value";
-            //cbVehicleClass.DisplayMemberPath = "Value";
+            //Load Values to Vehicle Class Combobox
+            VehicleClasses = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
+            cbVehicleClass.ItemsSource = VehicleClasses;
+            cbVehicleClass.SelectedValuePath = "Value";
+            cbVehicleClass.DisplayMemberPath = "Value";
         }
 
         /// <summary>
@@ -76,9 +76,9 @@ namespace FinlandVehicleRegister.Views
                     cbVehicleClass.IsEnabled = true;
                     txtBrand.IsEnabled = true;
                     break;
-                case "Korityyppi":
-                    cbVehicleClass.IsEnabled = true;
-                    break;
+                //case "Korityyppi":
+                //    cbVehicleClass.IsEnabled = true;
+                //    break;
                 case "Merkki":
                     cbVehicleClass.IsEnabled = true;
                     break;
@@ -126,6 +126,17 @@ namespace FinlandVehicleRegister.Views
                         SearchResult.RemoveAt(0);
                         dgData.ItemsSource = SearchResult;
                         break;
+                    case "Korityyppi":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKorityyppi);
+                        SearchResult.RemoveAt(0);
+                        dgData.ItemsSource = SearchResult;
+                        break;
+                    case "Merkki":
+                        string vehicleClass = cbVehicleClass.SelectedValue.ToString();
+                        string query = $"SELECT merkkiSelvakielinen as Name, COUNT(merkkiSelvakielinen) as Value FROM Ajoneuvo WHERE ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{vehicleClass}') GROUP BY merkkiSelvakielinen HAVING Value > 100 ORDER BY Value DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query);
+                        dgData.ItemsSource = SearchResult;
+                        break;
                 }
                 PieChart.DataSource = SearchResult;
                 PieChart.TitleMemberPath = "Name";
@@ -133,7 +144,7 @@ namespace FinlandVehicleRegister.Views
             }
             catch (NullReferenceException)
             {
-                MessageDialog dialog = new MessageDialog("Select search type!");
+                MessageDialog dialog = new MessageDialog("Fill all enabled fields!");
                 dialog.Title = "Info";
                 await dialog.ShowAsync();
             }
