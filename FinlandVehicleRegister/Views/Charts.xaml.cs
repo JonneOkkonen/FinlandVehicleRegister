@@ -39,6 +39,45 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar DataContext to this page
             NavigationBar.DataContext = this;
+
+            // Set Type Combobox Values
+            cbType.Items.Add("Ajoneuvoluokka");
+            cbType.Items.Add("Ensirekisteröintimäärät");
+            cbType.Items.Add("Ajoneuvon käyttö");
+            cbType.Items.Add("Väri");
+            cbType.Items.Add("Korityyppi");
+            cbType.Items.Add("Käyttövoima");
+            cbType.Items.Add("Sähköhybridien määrä");
+            cbType.Items.Add("Merkki");
+        }
+
+        private void cbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(cbType.SelectedItem.ToString())
+            {
+                case "Ensirekisteröintimäärät":
+                    StartDate.IsEnabled = true;
+                    EndDate.IsEnabled = true;
+                    cbVehicleClass.IsEnabled = true;
+                    cbBrand.IsEnabled = true;
+                    break;
+                case "Korityyppi":
+                    cbVehicleClass.IsEnabled = true;
+                    break;
+                case "Merkki":
+                    cbVehicleClass.IsEnabled = true;
+                    break;
+                case "Sähköhybridien määrä":
+                    StartDate.IsEnabled = true;
+                    EndDate.IsEnabled = true;
+                    break;
+                default:
+                    StartDate.IsEnabled = false;
+                    EndDate.IsEnabled = false;
+                    cbVehicleClass.IsEnabled = false;
+                    cbBrand.IsEnabled = false;
+                    break;
+            }
         }
     }
 }

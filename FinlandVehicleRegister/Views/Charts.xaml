@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:FinlandVehicleRegister.Views"
+    xmlns:charts="using:Ailon.QuickCharts"
     mc:Ignorable="d">
     <Page.Background>
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
@@ -13,10 +14,35 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="Charts" VerticalAlignment="Top" Foreground="White"></Button>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Charts" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Types:" Margin="10, 8, 0, 5" Foreground="White"/>
+                        <ComboBox x:Name="cbType" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" SelectionChanged="cbType_SelectionChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Date:" Margin="10, 8, 0, 5" Foreground="White"/>
+                        <StackPanel Orientation="Horizontal">
+                            <DatePicker x:Name="StartDate" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="200" IsEnabled="False"/>
+                            <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 0"></TextBlock>
+                            <DatePicker x:Name="EndDate" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="200" IsEnabled="False"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Vehicle Class:" Margin="10, 8, 0, 5" Foreground="White"/>
+                        <ComboBox x:Name="cbVehicleClass" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Vehicle Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
+                        <ComboBox x:Name="cbBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
+                    </StackPanel>
+                    <Button Content="Search" x:Name="btnSearch" RequestedTheme="Dark" Margin="50,31,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="200"/>
+                </StackPanel>
+                <charts:PieChart Grid.Row="1" Name="PieChart" Margin="10"/>
+            </StackPanel>
         </StackPanel>
-		<StackPanel Orientation="Horizontal">
-			<Image Source="{Binding imgPieChart}"></Image>
-		</StackPanel>
     </Grid>
 </Page>
