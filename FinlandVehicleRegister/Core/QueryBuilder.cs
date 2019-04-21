@@ -35,7 +35,9 @@ namespace FinlandVehicleRegister.Core
             VKunta,
             VOhjaamotyyppi,
             VVari,
-            Vehicle
+            Vehicle,
+            ChartVari,
+            Ajoneuvo
         }
         
         /// <summary>

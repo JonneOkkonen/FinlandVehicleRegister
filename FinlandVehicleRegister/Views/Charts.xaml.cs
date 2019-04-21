@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
+using FinlandVehicleRegister.Core;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +26,8 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class Charts : Page
     {
+        List<Option> VehicleClasses = new List<Option>();
+        List<ChartItem> SearchResult = new List<ChartItem>();
         public Charts()
         {
             this.InitializeComponent();
@@ -49,8 +53,19 @@ namespace FinlandVehicleRegister.Views
             cbType.Items.Add("Käyttövoima");
             cbType.Items.Add("Sähköhybridien määrä");
             cbType.Items.Add("Merkki");
+
+            // Load Values to Vehicle Class Combobox
+            //VehicleClasses = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
+            //cbVehicleClass.ItemsSource = VehicleClasses;
+            //cbVehicleClass.SelectedValuePath = "Value";
+            //cbVehicleClass.DisplayMemberPath = "Value";
         }
 
+        /// <summary>
+        /// Event Handler for Type Selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch(cbType.SelectedItem.ToString())
@@ -59,7 +74,7 @@ namespace FinlandVehicleRegister.Views
                     StartDate.IsEnabled = true;
                     EndDate.IsEnabled = true;
                     cbVehicleClass.IsEnabled = true;
-                    cbBrand.IsEnabled = true;
+                    txtBrand.IsEnabled = true;
                     break;
                 case "Korityyppi":
                     cbVehicleClass.IsEnabled = true;
@@ -75,8 +90,41 @@ namespace FinlandVehicleRegister.Views
                     StartDate.IsEnabled = false;
                     EndDate.IsEnabled = false;
                     cbVehicleClass.IsEnabled = false;
-                    cbBrand.IsEnabled = false;
+                    txtBrand.IsEnabled = false;
                     break;
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for Search Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                switch (cbType.SelectedItem.ToString())
+                {
+                    case "Väri":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartVari);
+                        SearchResult.RemoveAt(0);
+                        PieChart.DataSource = SearchResult;
+                        PieChart.TitleMemberPath = "Name";
+                        PieChart.ValueMemberPath = "Value";
+                        break;
+                }
+            }catch (NullReferenceException)
+            {
+                MessageDialog dialog = new MessageDialog("Select search type!");
+                dialog.Title = "Info";
+                await dialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.Title = "Exception";
+                await dialog.ShowAsync();
             }
         }
     }

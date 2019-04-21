@@ -37,11 +37,11 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="Vehicle Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
+                        <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
                     </StackPanel>
-                    <Button Content="Search" x:Name="btnSearch" RequestedTheme="Dark" Margin="50,31,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="200"/>
+                    <Button Content="Search" x:Name="btnSearch" RequestedTheme="Dark" Margin="50,31,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="200" Click="btnSearch_Click"/>
                 </StackPanel>
-                <charts:PieChart Grid.Row="1" Name="PieChart" Margin="10"/>
+                <charts:PieChart x:Name="PieChart" RequestedTheme="Dark" Height="300" Margin="20"/>
             </StackPanel>
         </StackPanel>
     </Grid>
