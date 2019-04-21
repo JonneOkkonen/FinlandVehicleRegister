@@ -116,6 +116,16 @@ namespace FinlandVehicleRegister.Views
                         SearchResult.RemoveAt(0);
                         dgData.ItemsSource = SearchResult;
                         break;
+                    case "Käyttövoima":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKayttovoima);
+                        SearchResult.RemoveAt(0);
+                        dgData.ItemsSource = SearchResult;
+                        break;
+                    case "Ajoneuvon käyttö":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvonKaytto);
+                        SearchResult.RemoveAt(0);
+                        dgData.ItemsSource = SearchResult;
+                        break;
                 }
                 PieChart.DataSource = SearchResult;
                 PieChart.TitleMemberPath = "Name";
