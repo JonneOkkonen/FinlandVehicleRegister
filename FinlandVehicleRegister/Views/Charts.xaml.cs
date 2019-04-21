@@ -72,6 +72,7 @@ namespace FinlandVehicleRegister.Views
             {
                 case "Ensirekisteröintimäärät":
                     StartDate.IsEnabled = true;
+                    StartDate.Date = new DateTime(1900, 01, 01);
                     EndDate.IsEnabled = true;
                     cbVehicleClass.IsEnabled = true;
                     txtBrand.IsEnabled = true;
@@ -84,6 +85,7 @@ namespace FinlandVehicleRegister.Views
                     break;
                 case "Sähköhybridien määrä":
                     StartDate.IsEnabled = true;
+                    StartDate.Date = new DateTime(1900, 01, 01);
                     EndDate.IsEnabled = true;
                     break;
                 default:
@@ -135,6 +137,23 @@ namespace FinlandVehicleRegister.Views
                         string vehicleClass = cbVehicleClass.SelectedValue.ToString();
                         string query = $"SELECT merkkiSelvakielinen as Name, COUNT(merkkiSelvakielinen) as Value FROM Ajoneuvo WHERE ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{vehicleClass}') GROUP BY merkkiSelvakielinen HAVING Value > 100 ORDER BY Value DESC;";
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query);
+                        dgData.ItemsSource = SearchResult;
+                        break;
+                    case "Ensirekisteröintimäärät":
+                        string startDate = StartDate.Date.ToString("yyyy-MM-dd");
+                        string endDate = EndDate.Date.ToString("yyyy-MM-dd");
+                        string vehicleClass2 = "";
+                        string brand = "";
+                        if (cbVehicleClass.SelectedValue != null)
+                        {
+                            vehicleClass2 = $" ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{cbVehicleClass.SelectedValue.ToString()}') AND ";
+                        }
+                        if(txtBrand.Text != "")
+                        {
+                            brand = $" merkkiSelvakielinen='{txtBrand.Text}' AND ";
+                        }
+                        string query2 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(ensirekisterointipvm) as Value FROM Ajoneuvo WHERE{vehicleClass2}{brand} ensirekisterointipvm BETWEEN '{startDate}' AND '{endDate}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query2);
                         dgData.ItemsSource = SearchResult;
                         break;
                 }
