@@ -104,17 +104,24 @@ namespace FinlandVehicleRegister.Views
         {
             try
             {
+                SearchResult.Clear();
                 switch (cbType.SelectedItem.ToString())
                 {
+                    case "Ajoneuvoluokka":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvoluokka);
+                        dgData.ItemsSource = SearchResult;
+                        break;
                     case "Väri":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartVari);
                         SearchResult.RemoveAt(0);
-                        PieChart.DataSource = SearchResult;
-                        PieChart.TitleMemberPath = "Name";
-                        PieChart.ValueMemberPath = "Value";
+                        dgData.ItemsSource = SearchResult;
                         break;
                 }
-            }catch (NullReferenceException)
+                PieChart.DataSource = SearchResult;
+                PieChart.TitleMemberPath = "Name";
+                PieChart.ValueMemberPath = "Value";
+            }
+            catch (NullReferenceException)
             {
                 MessageDialog dialog = new MessageDialog("Select search type!");
                 dialog.Title = "Info";
