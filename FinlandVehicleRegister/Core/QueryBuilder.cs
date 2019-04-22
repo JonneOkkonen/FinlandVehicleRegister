@@ -48,7 +48,7 @@ namespace FinlandVehicleRegister.Core
         /// Builds Basic Query based on query type and given fields
         /// </summary>
         /// <param name="type"></param>
-        public void Build(QueryType type, Table table = Table.Vehicle, int limit = 100)
+        public void Build(QueryType type, int limit = 100, Table table = Table.Vehicle)
         {
             switch(type)
             {
@@ -61,9 +61,43 @@ namespace FinlandVehicleRegister.Core
                         foreach (Field f in fields)
                         {
                             if (f == last)
-                                queryString += $"{f.FieldName}='{f.Value}' LIMIT {limit};";
+                            {
+                                if (f.Value2 != null) {
+                                    queryString += $"{f.FieldName} BETWEEN '{f.Value}' AND '{f.Value2}' LIMIT {limit};";
+                                } else {
+                                    switch(f.FieldName)
+                                    {
+                                        case Field.Fields.merkkiSelvakielinen:
+                                            queryString += $"{f.FieldName} LIKE '%{f.Value}%' LIMIT {limit};";
+                                            break;
+                                        case Field.Fields.mallimerkinta:
+                                            queryString += $"{f.FieldName} LIKE '%{f.Value}%' LIMIT {limit};";
+                                            break;
+                                        default:
+                                            queryString += $"{f.FieldName}='{f.Value}' LIMIT {limit};";
+                                            break;
+                                    }
+                                }
+                            }                                  
                             else
-                                queryString += $"{f.FieldName}='{f.Value}' AND ";
+                            {
+                                if (f.Value2 != null) {
+                                    queryString += $"{f.FieldName} BETWEEN '{f.Value}' AND '{f.Value2}' AND ";
+                                } else {
+                                    switch (f.FieldName)
+                                    {
+                                        case Field.Fields.merkkiSelvakielinen:
+                                            queryString += $"{f.FieldName} LIKE '%{f.Value}%' AND ";
+                                            break;
+                                        case Field.Fields.mallimerkinta:
+                                            queryString += $"{f.FieldName} LIKE '%{f.Value}%' AND ";
+                                            break;
+                                        default:
+                                            queryString += $"{f.FieldName}='{f.Value}' AND ";
+                                            break;
+                                    }
+                                }   
+                            }
                         }
                     }
                     else queryString += $" LIMIT {limit};";
@@ -71,9 +105,9 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
-        public void AddField(Field.Fields field, string value)
+        public void AddField(Field.Fields field, string value, string value2 = null)
         {
-            fields.Add(new Field(field, value));
+            fields.Add(new Field(field, value, value2));
         }
     }
 }

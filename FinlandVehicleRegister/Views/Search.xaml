@@ -14,84 +14,66 @@
         <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
             <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True">
-                <!--1st box-->
                 <StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
                     <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"></TextBlock>
-                    <StackPanel>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
-                            <TextBox x:Name="txtModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                        </StackPanel>
+                    <TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <TextBox x:Name="txtModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
+                    <TextBlock Text="First register date:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <DatePicker x:Name="dpFirstRegDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
+                    <DatePicker x:Name="dpFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <TextBlock Text="Deployment date:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <DatePicker x:Name="dpDeployDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
+                    <DatePicker x:Name="dpDeployDate2" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <TextBlock Text="Serial Number:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <TextBox x:Name="txtSerialNmb" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+                    <TextBlock Text="Color:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <ComboBox x:Name="cbColor" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
+                    <TextBlock Text="Car class:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <ComboBox x:Name="cbCarClass" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
+                    <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
+                    <TextBlock Text="Co2:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtStartCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
+                        <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
+                        <TextBox x:Name="txtEndCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="First register date:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <StackPanel Orientation="Vertical">
-                            <DatePicker x:Name="dpFirstRegDate1" Header="FirstRegistrationDate" Background="White" Margin="10,-14, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
-                            <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
-                            <DatePicker x:Name="dpFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
-                        </StackPanel>
+                    <TextBlock Text="Mileage:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtStartMileage" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
+                        <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
+                        <TextBox x:Name="txtEndMileage" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Deployment date:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <DatePicker x:Name="dpDeployDate1" Header="Deployment Date:" Background="White" Margin="10,-14, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
-                        <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
-                        <DatePicker x:Name="dpDeployDate2" Header="Deployment Date:" Background="White" Margin="10,-14, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <TextBlock Text="Frame Type" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <ComboBox x:Name="cbFrameType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
+                    <TextBlock Text="Mass:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtStartMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
+                        <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
+                        <TextBox x:Name="txtEndMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Serial Number:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtSerialNmb" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
+                    <TextBlock Text="Fuel type" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <ComboBox x:Name="cbFuelType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
+                    <TextBlock Text="Cylinder capacity:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtStartCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
+                        <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
+                        <TextBox x:Name="txtEndCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
                     </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Color:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbColor" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Car class:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbCarClass" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
-                        </TextBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Co2:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Frame Type" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbFrameType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Mass:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Fuel type" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbFuelType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White">
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Cylinder capacity:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="Net Power:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtNetPower" Background="White" Margin="10,0,10,10" HorizontalAlignment="Stretch"></TextBox>
+                    <TextBlock Text="Net Power:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="txtStartNetPower" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
+                        <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
+                        <TextBox x:Name="txtEndNetPower" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"></TextBox>
                     </StackPanel>
                     <CheckBox x:Name="ckbElecHybrid" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" Content="Electric Hybrid" RequestedTheme="Dark"/>
-                    <StackPanel>
-                        <TextBlock Text="Gears:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <TextBox x:Name="txtGears" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                    </StackPanel>
-                    <StackPanel>
-                        <TextBlock Text="County:" Margin="10, 8, 0, 5" Foreground="White"/>
-                        <ComboBox x:Name="cbCounty" Height="30" Margin="10,0,10,20" HorizontalAlignment="Stretch" Background="White"  VerticalAlignment="Top">
-                        </ComboBox>
-                        <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click"></Button>
-                    </StackPanel>
+                    <TextBlock Text="Gears:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <TextBox x:Name="txtGears" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
+                    <TextBlock Text="County:" Margin="10, 8, 0, 5" Foreground="White"/>
+                    <ComboBox x:Name="cbCounty" Height="30" Margin="10,0,10,20" HorizontalAlignment="Stretch" Background="White"  VerticalAlignment="Top"/>
+                    <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click"></Button>
                 </StackPanel>
             </ScrollViewer>
         </RelativePanel>

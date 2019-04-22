@@ -28,7 +28,7 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class SearchResult : Page
     {
-
+        public static List<Vehicle> Vehicles = new List<Vehicle>();
         public SearchResult()
         {
             this.InitializeComponent();
@@ -45,6 +45,11 @@ namespace FinlandVehicleRegister.Views
             //Change view to this page
             NavigationBar.DataContext = this;
 
+            // Set DataGrid ItemSource
+            dgData.ItemsSource = Vehicles;
+
+            // Set Result Count
+            txtResultCount.Text = Vehicles.Count.ToString();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

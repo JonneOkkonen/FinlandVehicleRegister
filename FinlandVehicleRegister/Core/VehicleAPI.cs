@@ -75,7 +75,7 @@ namespace FinlandVehicleRegister.Core
             {
                 List<Option> values = new List<Option>();
                 QueryBuilder query = new QueryBuilder();
-                query.Build(QueryBuilder.QueryType.Select, table, 500);
+                query.Build(QueryBuilder.QueryType.Select, 500, table);
                 string json = LoadData(query.QueryString);
                 values = JsonConvert.DeserializeObject<List<Option>>(json);
                 if (values[0].Error != null)
@@ -105,7 +105,7 @@ namespace FinlandVehicleRegister.Core
             {
                 List<ChartItem> values = new List<ChartItem>();
                 QueryBuilder query = new QueryBuilder();
-                query.Build(QueryBuilder.QueryType.Select, table, 500);
+                query.Build(QueryBuilder.QueryType.Select, 500, table);
                 string json = "";
                 if(customQuery != null)
                 {

@@ -14,10 +14,14 @@
     <Grid>
         <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
-            <StackPanel>
-                <controls:DataGrid>
-                    
-                </controls:DataGrid>
+            <StackPanel Orientation="Horizontal" RelativePanel.RightOf="NavigationBar">
+                <Button x:Name="btnBack" Click="BtnBack_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" RequestedTheme="Dark"/>
+                <TextBlock Text="Search Result" Margin="10, 8, 0, 0" FontSize="20" Foreground="White"/>
+            </StackPanel>
+            <controls:DataGrid x:Name="dgData" RequestedTheme="Dark" Margin="20, 45, 20, 40" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+            <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.RightOf="NavigationBar">
+                <TextBlock Text="Count: " Margin="20,10,5,0" Foreground="White"/>
+                <TextBlock x:Name="txtResultCount" Text="0000" Margin="0,10,20,10" Foreground="White"/>
             </StackPanel>
         </RelativePanel>
     </Grid>

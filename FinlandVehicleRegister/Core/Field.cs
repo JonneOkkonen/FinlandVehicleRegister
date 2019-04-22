@@ -11,7 +11,7 @@ namespace FinlandVehicleRegister.Core
         public enum Fields
         {
             ID,
-            ajoneuvoluokka,
+            ajoneuvoluokka_koodi,
             ensirekisterointipvm,
             ajoneuvoryhma,
             ajoneuvonkaytto,
@@ -20,7 +20,7 @@ namespace FinlandVehicleRegister.Core
             kayttoonottopvm,
             vari,
             ovienLukumaara,
-            korityyppi,
+            korityyppi_pitkaselite,
             ohjaamotyyppi,
             istumapaikkojenLkm,
             omamassa,
@@ -54,11 +54,13 @@ namespace FinlandVehicleRegister.Core
 
         public Fields FieldName { get; set; }
         public string Value { get; set; }
+        public string Value2 { get; set; }
 
-        public Field(Fields fieldName, string value)
+        public Field(Fields fieldName, string value, string value2 = null)
         {
             FieldName = fieldName;
             Value = value;
+            Value2 = value2;
         }
     }
 }
