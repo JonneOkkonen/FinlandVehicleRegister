@@ -13,7 +13,24 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="SearchResult Page" VerticalAlignment="Top" Foreground="White"></Button>
+            <StackPanel>
+                <TextBlock Text="Search Result Page" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left"></TextBlock>
+                <Button x:Name="btnBack" Click="BtnBack_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" RequestedTheme="Dark"></Button>
+            </StackPanel>
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding Path=Search}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"></TextBlock>
+                                    <TextBox Text="{Binding txtBrand, Mode=TwoWay}" MinWidth="400" MaxWidth="400" Margin="5"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
