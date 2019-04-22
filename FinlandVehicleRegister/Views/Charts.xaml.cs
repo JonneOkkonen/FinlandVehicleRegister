@@ -156,6 +156,13 @@ namespace FinlandVehicleRegister.Views
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query2);
                         dgData.ItemsSource = SearchResult;
                         break;
+                    case "Sähköhybridien määrä":
+                        string startDate2 = StartDate.Date.ToString("yyyy-MM-dd");
+                        string endDate2 = EndDate.Date.ToString("yyyy-MM-dd");
+                        string query3 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(sahkohybridi) as Value FROM Ajoneuvo WHERE sahkohybridi=1 AND ensirekisterointipvm BETWEEN '{startDate2}' AND '{endDate2}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query3);
+                        dgData.ItemsSource = SearchResult;
+                        break;
                 }
                 PieChart.DataSource = SearchResult;
                 PieChart.TitleMemberPath = "Name";
