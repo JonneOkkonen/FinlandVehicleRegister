@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using FinlandVehicleRegister.Views;
 using System.Drawing;
+using FinlandVehicleRegister.Core;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -40,6 +42,30 @@ namespace FinlandVehicleRegister
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar DataContext to this page
             NavigationBar.DataContext = this;
+            // TEST SAVE TO SearchHistory
+            //SearchHistory.List.Clear();
+            //SearchHistory.AddItem(new SearchHistoryItem("BMW Haku", DateTime.Now, "5 results", "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen = 'BMW' LIMIT 100;"));
+            //SearchHistory.AddItem(new SearchHistoryItem("Volkswagen Haku", DateTime.Now, "2 results", "SELECT * FROM Ajoneuvo WHERE merkkiSelvakielinen = 'Volkswagen' LIMIT 100;"));
+            //SearchHistory.Save();
+
+            // Test SearchHistory
+            LoadSearchHistory();
+
+        }
+
+        public async void LoadSearchHistory()
+        {
+            try
+            {
+                SearchHistory.Read();
+                icSearchHistory.ItemsSource = SearchHistory.List;
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.Title = "Error";
+                await dialog.ShowAsync();
+            }
         }
     }
 }

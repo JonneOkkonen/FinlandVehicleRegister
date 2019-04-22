@@ -98,8 +98,10 @@
     <Compile Include="Core\ChartItem.cs" />
     <Compile Include="Core\Exceptions.cs" />
     <Compile Include="Core\Field.cs" />
+    <Compile Include="Core\SearchHistory.cs" />
     <Compile Include="Core\Option.cs" />
     <Compile Include="Core\QueryBuilder.cs" />
+    <Compile Include="Core\SearchHistoryItem.cs" />
     <Compile Include="Core\Vehicle.cs" />
     <Compile Include="Core\VehicleAPI.cs" />
     <Compile Include="MainPage.xaml.cs">
