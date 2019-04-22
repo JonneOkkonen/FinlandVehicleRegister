@@ -129,7 +129,9 @@ namespace FinlandVehicleRegister.Views
 
                 if (txtGears.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.vaihteisto, txtGears.Text);
+                    int value;
+                    if (int.TryParse(txtGears.Text, out value) == false) throw new Exception("Number of Gears value isn't integer");
+                    searchquery.AddField(Field.Fields.vaihteisto, value.ToString());
                 }
 
                 if (txtSerialNmb.Text != "")
@@ -139,27 +141,42 @@ namespace FinlandVehicleRegister.Views
 
                 if (txtStartCo2.Text != "" && txtEndCo2.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.Co2, txtStartCo2.Text, txtEndCo2.Text);
+                    int start, end;
+                    if (int.TryParse(txtStartCo2.Text, out start) == false) throw new Exception("Co2 Start value isn't integer");
+                    if (int.TryParse(txtEndCo2.Text, out end) == false) throw new Exception("Co2 End value isn't integer");
+                    searchquery.AddField(Field.Fields.Co2, start.ToString(), end.ToString());
                 }
 
                 if(txtStartMileage.Text != "" && txtEndMileage.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.matkamittarilukema, txtStartMileage.Text, txtEndMileage.Text);
+                    int start, end;
+                    if (int.TryParse(txtStartMileage.Text, out start) == false) throw new Exception("Mileage Start value isn't integer");
+                    if (int.TryParse(txtEndMileage.Text, out end) == false) throw new Exception("Mileage End value isn't integer");
+                    searchquery.AddField(Field.Fields.matkamittarilukema, start.ToString(), end.ToString());
                 }
 
                 if (txtStartMass.Text != "" && txtEndMass.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.omamassa, txtStartMass.Text, txtEndMass.Text);
+                    int start, end;
+                    if (int.TryParse(txtStartMass.Text, out start) == false) throw new Exception("Weight Start value isn't integer");
+                    if (int.TryParse(txtEndMass.Text, out end) == false) throw new Exception("Weight End value isn't integer");
+                    searchquery.AddField(Field.Fields.omamassa, start.ToString(), end.ToString());
                 }
 
                 if (txtStartCylinderCap.Text != "" && txtEndCylinderCap.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.sylintereidenLkm, txtStartCylinderCap.Text, txtEndCylinderCap.Text);
+                    int start, end;
+                    if (int.TryParse(txtStartCylinderCap.Text, out start) == false) throw new Exception("Engine Size Start value isn't integer");
+                    if (int.TryParse(txtEndCylinderCap.Text, out end) == false) throw new Exception("Engine Size End value isn't integer");
+                    searchquery.AddField(Field.Fields.sylintereidenLkm, start.ToString(), end.ToString());
                 }
 
                 if (txtStartNetPower.Text != "" && txtEndNetPower.Text != "")
                 {
-                    searchquery.AddField(Field.Fields.suurinNettoteho, txtStartNetPower.Text, txtEndNetPower.Text);
+                    int start, end;
+                    if (int.TryParse(txtStartNetPower.Text, out start) == false) throw new Exception("Power Start value isn't integer");
+                    if (int.TryParse(txtEndNetPower.Text, out end) == false) throw new Exception("Power End value isn't integer");
+                    searchquery.AddField(Field.Fields.suurinNettoteho, start.ToString(), end.ToString());
                 }
 
                 if (cbCarClass.SelectedValue != null)
@@ -175,14 +192,17 @@ namespace FinlandVehicleRegister.Views
                 searchquery.Build(QueryBuilder.QueryType.Select, 1000);
                 string query = searchquery.QueryString;
                 SearchResult.Vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
+                if(SearchResult.Vehicles.Count > 0)
+                {
+                    Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
+                }
             }
             catch (Exception ex)
             {
                 MessageDialog dialog = new MessageDialog(ex.Message);
-                dialog.Title = "Error";
+                dialog.Title = "Info";
                 await dialog.ShowAsync();
             }
-            this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
         }
 
         private void CbFirstRegDate_Click(object sender, RoutedEventArgs e)
