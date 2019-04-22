@@ -27,7 +27,7 @@ namespace FinlandVehicleRegister.Views
     public sealed partial class Charts : Page
     {
         List<Option> VehicleClasses = new List<Option>();
-        List<ChartItem> SearchResult = new List<ChartItem>();
+        public List<ChartItem> SearchResult = new List<ChartItem>();
         public Charts()
         {
             this.InitializeComponent();
@@ -111,33 +111,27 @@ namespace FinlandVehicleRegister.Views
                 {
                     case "Ajoneuvoluokka":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvoluokka);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Väri":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartVari);
                         SearchResult.RemoveAt(0);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Käyttövoima":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKayttovoima);
                         SearchResult.RemoveAt(0);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Ajoneuvon käyttö":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvonKaytto);
                         SearchResult.RemoveAt(0);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Korityyppi":
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKorityyppi);
                         SearchResult.RemoveAt(0);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Merkki":
                         string vehicleClass = cbVehicleClass.SelectedValue.ToString();
                         string query = $"SELECT merkkiSelvakielinen as Name, COUNT(merkkiSelvakielinen) as Value FROM Ajoneuvo WHERE ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{vehicleClass}') GROUP BY merkkiSelvakielinen HAVING Value > 100 ORDER BY Value DESC;";
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Ensirekisteröintimäärät":
                         string startDate = StartDate.Date.ToString("yyyy-MM-dd");
@@ -154,19 +148,18 @@ namespace FinlandVehicleRegister.Views
                         }
                         string query2 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(ensirekisterointipvm) as Value FROM Ajoneuvo WHERE{vehicleClass2}{brand} ensirekisterointipvm BETWEEN '{startDate}' AND '{endDate}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query2);
-                        dgData.ItemsSource = SearchResult;
                         break;
                     case "Sähköhybridien määrä":
                         string startDate2 = StartDate.Date.ToString("yyyy-MM-dd");
                         string endDate2 = EndDate.Date.ToString("yyyy-MM-dd");
                         string query3 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(sahkohybridi) as Value FROM Ajoneuvo WHERE sahkohybridi=1 AND ensirekisterointipvm BETWEEN '{startDate2}' AND '{endDate2}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
                         SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query3);
-                        dgData.ItemsSource = SearchResult;
                         break;
                 }
                 PieChart.DataSource = SearchResult;
                 PieChart.TitleMemberPath = "Name";
                 PieChart.ValueMemberPath = "Value";
+                dgData.ItemsSource = SearchResult;
             }
             catch (NullReferenceException)
             {
