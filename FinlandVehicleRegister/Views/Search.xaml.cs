@@ -47,6 +47,8 @@ namespace FinlandVehicleRegister.Views
         private List<Option> vCounty;
         private List<Option> vFuelType;
 
+
+
         public Search()
         {
             this.InitializeComponent();
@@ -123,47 +125,18 @@ namespace FinlandVehicleRegister.Views
         {
             this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
 
+            if (txtBrand.Text != null)
+            {
+                QueryBuilder searchquery = new QueryBuilder();
+                searchquery.AddField(Field.Fields.ID, "8897");
+                searchquery.Build(QueryBuilder.QueryType.Select);
+                List<Vehicle> vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
+                string actual = vehicles[0].Ensirekisterointipvm;
+            }
+            else
+            {
 
-        }
-
-        private void TxtModel_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            txtModel.Text = txtModel.Text;
-        }
-
-        private void TxtSerialNmb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtBrand_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtCo2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtMass_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtCylinderCap_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtNetPower_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TxtGears_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ using System.Drawing;
 using Windows.UI.Xaml.Media.Animation;
 using FinlandVehicleRegister.Core;
 using FinlandVehicleRegister.Views;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,6 +28,7 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class SearchResult : Page
     {
+
         public SearchResult()
         {
             this.InitializeComponent();

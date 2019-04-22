@@ -6,31 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:FinlandVehicleRegister.Views"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
     <Page.Background>
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <views:NavigationBar x:Name="NavigationBar"/>
-            <StackPanel>
-                <TextBlock Text="Search Result Page" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left"></TextBlock>
-                <Button x:Name="btnBack" Click="BtnBack_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" RequestedTheme="Dark"></Button>
+        <RelativePanel>
+            <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+            <StackPanel Orientation="Vertical">
+                <controls:DataGrid>
+                    
+                </controls:DataGrid>
             </StackPanel>
-            <StackPanel>
-                <ItemsControl ItemsSource="{Binding Path=Search}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"></TextBlock>
-                                    <TextBox Text="{Binding txtBrand, Mode=TwoWay}" MinWidth="400" MaxWidth="400" Margin="5"></TextBox>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>
