@@ -12,7 +12,7 @@ namespace FinlandVehicleRegister.Core
 {
     public static class SearchHistory
     {
-        public static readonly string FileName = ApplicationData.Current.LocalFolder.Path + @"\SearchHistory.bin";
+        public static readonly string Path = ApplicationData.Current.LocalFolder.Path + @"\SearchHistory.bin";
         private static IFormatter formatter = new BinaryFormatter();
         public static List<SearchHistoryItem> List = new List<SearchHistoryItem>();
 
@@ -20,8 +20,11 @@ namespace FinlandVehicleRegister.Core
         {
             try
             {
-                Stream openStream = new FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                List = (List<SearchHistoryItem>)formatter.Deserialize(openStream);
+                Stream openStream = new FileStream(Path, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
+                if(openStream.Length > 0)
+                {
+                    List = (List<SearchHistoryItem>)formatter.Deserialize(openStream);
+                }
                 openStream.Close();
             }
             catch
@@ -34,7 +37,7 @@ namespace FinlandVehicleRegister.Core
         {
             try
             {
-                Stream writeMultipleStream = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+                Stream writeMultipleStream = new FileStream(Path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
                 formatter.Serialize(writeMultipleStream, List);
                 writeMultipleStream.Close();
             }

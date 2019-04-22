@@ -190,10 +190,11 @@ namespace FinlandVehicleRegister.Views
                 }
 
                 searchquery.Build(QueryBuilder.QueryType.Select, 1000);
-                string query = searchquery.QueryString;
                 SearchResult.Vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
                 if(SearchResult.Vehicles.Count > 0)
                 {
+                    SearchHistory.AddItem(new SearchHistoryItem("Search", DateTime.Now, SearchResult.Vehicles.Count + " results", searchquery.QueryString));
+                    SearchHistory.Save();
                     Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
                 }
             }
