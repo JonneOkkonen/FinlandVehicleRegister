@@ -14,7 +14,7 @@
     <Grid>
         <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
-            <StackPanel Orientation="Vertical">
+            <StackPanel>
                 <controls:DataGrid>
                     
                 </controls:DataGrid>

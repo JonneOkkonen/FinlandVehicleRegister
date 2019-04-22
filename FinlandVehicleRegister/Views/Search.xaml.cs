@@ -125,18 +125,24 @@ namespace FinlandVehicleRegister.Views
         {
             this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
 
-            if (txtBrand.Text != null)
-            {
-                QueryBuilder searchquery = new QueryBuilder();
-                searchquery.AddField(Field.Fields.ID, "8897");
-                searchquery.Build(QueryBuilder.QueryType.Select);
-                List<Vehicle> vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
-                string actual = vehicles[0].Ensirekisterointipvm;
-            }
-            else
-            {
+            QueryBuilder searchquery = new QueryBuilder();
 
+            if (txtBrand.Text != null)
+
+            {
+                txtBrand.Text = "";
+                searchquery.AddField(Field.Fields.ensirekisterointipvm, txtBrand.Text);
             }
+
+            if(dpFirstRegDate1.Date != null)
+            {
+                string startdate = dpFirstRegDate1.Date.ToString("yyyy-MM-dd");
+                searchquery.AddField(Field.Fields.ensirekisterointipvm, startdate);
+            }
+
+            searchquery.Build(QueryBuilder.QueryType.Select);
+            List<Vehicle> vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
+
         }
     }
 }
