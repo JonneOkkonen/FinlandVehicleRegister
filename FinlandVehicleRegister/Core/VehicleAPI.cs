@@ -98,5 +98,43 @@ namespace FinlandVehicleRegister.Core
                 throw;
             }
         }
+
+        public static List<ChartItem> GetChartData(QueryBuilder.Table table, string customQuery = null)
+        {
+            try
+            {
+                List<ChartItem> values = new List<ChartItem>();
+                QueryBuilder query = new QueryBuilder();
+                query.Build(QueryBuilder.QueryType.Select, table, 500);
+                string json = "";
+                if(customQuery != null)
+                {
+                    json = LoadData(customQuery);
+                }else
+                {
+                    json = LoadData(query.QueryString);
+                }
+                values = JsonConvert.DeserializeObject<List<ChartItem>>(json);
+                if (values[0].Error != null)
+                {
+                    switch (values[0].Error)
+                    {
+                        case "Incorrect API - key":
+                            throw new IncorrectAPIKeyException("VehicleAPI: Incorrect API-key" + query.QueryString);
+                        case "Query was empty":
+                            throw new QueryEmptyException("VehicleAPI: Query was empty");
+                        case "0 results from query":
+                            throw new ZeroResultsFromQueryException("VehicleAPI: 0 results from query");
+                        default:
+                            throw new MySQLErrorException($"VehicleAPI: MySQL Error: {values[0].Error}");
+                    }
+                }
+                return values;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }
