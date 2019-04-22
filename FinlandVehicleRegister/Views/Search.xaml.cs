@@ -26,28 +26,12 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class Search : Page
     {
-        public List<string> colors = new List<string>();
-        public List<string> carclass = new List<string>();
-        public List<string> brand = new List<string>();
-        public List<string> frametype = new List<string>();
-        public List<string> fueltype = new List<string>();
-        public List<string> county = new List<string>();
-        public List<string> model = new List<string>();
-        public List<string> deploymentdate = new List<string>();
-        public List<string> serialnumber = new List<string>();
-        public List<string> co2 = new List<string>();
-        public List<string> mass = new List<string>();
-        public List<string> cylindercap = new List<string>();
-        public List<string> netpower = new List<string>();
-        public List<string> gears = new List<string>();
 
         private List<Option> vColor;
         private List<Option> vCarClass;
         private List<Option> vFrameType;
         private List<Option> vCounty;
         private List<Option> vFuelType;
-
-
 
         public Search()
         {
@@ -65,10 +49,9 @@ namespace FinlandVehicleRegister.Views
             // Set NavigationBar Datacontext to this page
             NavigationBar.DataContext = this;
 
+            //txtBrand.Text = "Test";
 
-            txtBrand.Text = "Test";
-
-            txtModel.Text = "model1";
+            //txtModel.Text = "model1";
 
             //Retrieve data to Color combobox
             vColor = VehicleAPI.GetOptions(QueryBuilder.Table.VVari);
@@ -87,7 +70,7 @@ namespace FinlandVehicleRegister.Views
             //Retrieve data to FuelType combobox
             vFuelType = VehicleAPI.GetOptions(QueryBuilder.Table.VKayttovoima);
             cbFuelType.ItemsSource = vFuelType;
-            cbFrameType.SelectedValue = "Value";
+            cbFuelType.SelectedValue = "Value";
             cbFuelType.DisplayMemberPath = "Value";
 
             //Retrieve data to FrameType combobox
@@ -100,19 +83,20 @@ namespace FinlandVehicleRegister.Views
             vCounty = VehicleAPI.GetOptions(QueryBuilder.Table.VKunta);
             cbCounty.ItemsSource = vCounty;
             cbCounty.SelectedValue = "Value";
-            cbCounty.DisplayMemberPath = "Value";
 
-            txtGears.Text = "6";
+            //cbCounty.DisplayMemberPath = "Value";
 
-            txtSerialNmb.Text = "SeR14L NuMB3r";
+            //txtGears.Text = "6";
 
-            txtCo2.Text = "High";
+            //txtSerialNmb.Text = "SeR14L NuMB3r";
 
-            txtMass.Text = "1200 kg";
+            //txtCo2.Text = "High";
 
-            txtCylinderCap.Text = "16";
+            //txtMass.Text = "1200 kg";
 
-            txtNetPower.Text = "100000 mPa";
+            //txtCylinderCap.Text = "16";
+
+            //txtNetPower.Text = "100000 mPa";
 
             //Retrieve data to Car Class combobox
             vCarClass = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
@@ -123,26 +107,113 @@ namespace FinlandVehicleRegister.Views
 
         private void BtnDoSearch_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                QueryBuilder searchquery = new QueryBuilder();
+                if (txtBrand.Text != null)
+
+                {
+                    searchquery.AddField(Field.Fields.merkkiSelvakielinen, txtBrand.Text);
+                }
+
+                if (txtModel.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.mallimerkinta, txtBrand.Text);
+                }
+
+                if (cbColor.SelectedValue != null)
+                {
+                    searchquery.AddField(Field.Fields.vari, cbColor.SelectedValue.ToString());
+                }
+
+                if (dpFirstRegDate1.Date != null)
+                {
+                    searchquery.AddField(Field.Fields.ensirekisterointipvm, dpFirstRegDate1.Date.ToString("yyyy-MM-dd"));
+                }
+
+                //To:
+
+                if (dpFirstRegDate2.Date != null)
+                {
+                    searchquery.AddField(Field.Fields.ensirekisterointipvm, dpFirstRegDate2.Date.ToString("yyyy-MM-dd"));
+                }
+
+                if (dpDeployDate1.Date != null)
+                {
+                    searchquery.AddField(Field.Fields.kayttoonottopvm, dpDeployDate1.Date.ToString("yyyy-MM-dd"));
+                }
+
+                //To:
+
+                if (dpDeployDate1.Date != null)
+                {
+                    searchquery.AddField(Field.Fields.kayttoonottopvm, dpDeployDate1.Date.ToString("yyyy-MM-dd"));
+                }
+
+                if (cbFuelType.SelectedValue != null)
+                {
+                    searchquery.AddField(Field.Fields.kayttovoima, cbFuelType.SelectedValue.ToString());
+                }
+
+                if (cbFrameType.SelectedValue != null)
+                {
+                    searchquery.AddField(Field.Fields.korityyppi, cbFrameType.SelectedValue.ToString());
+                }
+
+                if (cbCounty.SelectedValue != null)
+                {
+                    searchquery.AddField(Field.Fields.kunta, cbCounty.SelectedValue.ToString());
+                }
+
+                if (txtGears.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.vaihteisto, txtGears.Text);
+                }
+
+                if (txtSerialNmb.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.valmistenumero2, txtSerialNmb.Text);
+                }
+
+                if (txtCo2.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.Co2, txtCo2.Text);
+                }
+
+                if (txtMass.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.omamassa, txtMass.Text);
+                }
+
+                if (txtCylinderCap.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.sylintereidenLkm, txtCylinderCap.Text);
+                }
+
+                if (txtNetPower.Text != null)
+                {
+                    searchquery.AddField(Field.Fields.suurinNettoteho, txtNetPower.Text);
+                }
+
+                if (cbCarClass.SelectedValue != null)
+                {
+                    searchquery.AddField(Field.Fields.ajoneuvoluokka, cbCarClass.SelectedValue.ToString());
+                }
+
+                if (ckbElecHybrid.IsChecked == true)
+                {
+                    searchquery.AddField(Field.Fields.sahkohybridi, "1");
+                }
+
+                searchquery.Build(QueryBuilder.QueryType.Select);
+                List<Vehicle> vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
+            }
+            catch
+            {
+                throw;
+            }
+
             this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
-
-            QueryBuilder searchquery = new QueryBuilder();
-
-            if (txtBrand.Text != null)
-
-            {
-                txtBrand.Text = "";
-                searchquery.AddField(Field.Fields.ensirekisterointipvm, txtBrand.Text);
-            }
-
-            if(dpFirstRegDate1.Date != null)
-            {
-                string startdate = dpFirstRegDate1.Date.ToString("yyyy-MM-dd");
-                searchquery.AddField(Field.Fields.ensirekisterointipvm, startdate);
-            }
-
-            searchquery.Build(QueryBuilder.QueryType.Select);
-            List<Vehicle> vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
-
         }
     }
 }
