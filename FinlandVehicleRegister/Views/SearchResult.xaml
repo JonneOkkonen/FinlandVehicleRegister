@@ -6,14 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:FinlandVehicleRegister.Views"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
     <Page.Background>
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="SearchResult Page" VerticalAlignment="Top" Foreground="White"></Button>
-        </StackPanel>
+        <RelativePanel>
+            <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+            <StackPanel>
+                <controls:DataGrid>
+                    
+                </controls:DataGrid>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>

@@ -14,6 +14,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
+using Windows.UI.Xaml.Media.Animation;
+using FinlandVehicleRegister.Core;
+using FinlandVehicleRegister.Views;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +28,7 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class SearchResult : Page
     {
+
         public SearchResult()
         {
             this.InitializeComponent();
@@ -39,6 +44,12 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             //Change view to this page
             NavigationBar.DataContext = this;
+
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Search), null, new SuppressNavigationTransitionInfo());
         }
     }
 }
