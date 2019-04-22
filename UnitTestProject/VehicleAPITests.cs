@@ -56,6 +56,19 @@ namespace UnitTestProject
         }
 
         [TestMethod()]
+        // Test Get ChartData
+        public void TestGetChartData()
+        {
+            List<ChartItem> values = VehicleAPI.GetChartData(QueryBuilder.Table.ChartVari);
+            string actual = values[1].Name;
+            string expected = "Turkoosi";
+            Assert.AreEqual(expected, actual);
+            double actual1 = values[1].Value;
+            double expected1 = 4835;
+            Assert.AreEqual(expected1, actual1);
+        }
+
+        [TestMethod()]
         [ExpectedException(typeof(QueryEmptyException))]
         public void TestQueryEmptyError()
         {

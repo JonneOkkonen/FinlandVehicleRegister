@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Drawing;
+using FinlandVehicleRegister.Core;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +26,8 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class Charts : Page
     {
+        List<Option> VehicleClasses = new List<Option>();
+        public List<ChartItem> SearchResult = new List<ChartItem>();
         public Charts()
         {
             this.InitializeComponent();
@@ -39,6 +43,136 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar DataContext to this page
             NavigationBar.DataContext = this;
+
+            // Set Type Combobox Values
+            cbType.Items.Add("Ajoneuvoluokka");
+            cbType.Items.Add("Ensirekisteröintimäärät");
+            cbType.Items.Add("Ajoneuvon käyttö");
+            cbType.Items.Add("Väri");
+            cbType.Items.Add("Korityyppi");
+            cbType.Items.Add("Käyttövoima");
+            cbType.Items.Add("Sähköhybridien määrä");
+            cbType.Items.Add("Merkki");
+
+            //Load Values to Vehicle Class Combobox
+            VehicleClasses = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
+            cbVehicleClass.ItemsSource = VehicleClasses;
+            cbVehicleClass.SelectedValuePath = "Value";
+            cbVehicleClass.DisplayMemberPath = "Value";
+        }
+
+        /// <summary>
+        /// Event Handler for Type Selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(cbType.SelectedItem.ToString())
+            {
+                case "Ensirekisteröintimäärät":
+                    StartDate.IsEnabled = true;
+                    StartDate.Date = new DateTime(1900, 01, 01);
+                    EndDate.IsEnabled = true;
+                    cbVehicleClass.IsEnabled = true;
+                    txtBrand.IsEnabled = true;
+                    break;
+                //case "Korityyppi":
+                //    cbVehicleClass.IsEnabled = true;
+                //    break;
+                case "Merkki":
+                    cbVehicleClass.IsEnabled = true;
+                    break;
+                case "Sähköhybridien määrä":
+                    StartDate.IsEnabled = true;
+                    StartDate.Date = new DateTime(1900, 01, 01);
+                    EndDate.IsEnabled = true;
+                    break;
+                default:
+                    StartDate.IsEnabled = false;
+                    EndDate.IsEnabled = false;
+                    cbVehicleClass.IsEnabled = false;
+                    txtBrand.IsEnabled = false;
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for Search Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SearchResult.Clear();
+                switch (cbType.SelectedItem.ToString())
+                {
+                    case "Ajoneuvoluokka":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvoluokka);
+                        break;
+                    case "Väri":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartVari);
+                        SearchResult.RemoveAt(0);
+                        break;
+                    case "Käyttövoima":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKayttovoima);
+                        SearchResult.RemoveAt(0);
+                        break;
+                    case "Ajoneuvon käyttö":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartAjoneuvonKaytto);
+                        SearchResult.RemoveAt(0);
+                        break;
+                    case "Korityyppi":
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.ChartKorityyppi);
+                        SearchResult.RemoveAt(0);
+                        break;
+                    case "Merkki":
+                        string vehicleClass = cbVehicleClass.SelectedValue.ToString();
+                        string query = $"SELECT merkkiSelvakielinen as Name, COUNT(merkkiSelvakielinen) as Value FROM Ajoneuvo WHERE ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{vehicleClass}') GROUP BY merkkiSelvakielinen HAVING Value > 100 ORDER BY Value DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query);
+                        break;
+                    case "Ensirekisteröintimäärät":
+                        string startDate = StartDate.Date.ToString("yyyy-MM-dd");
+                        string endDate = EndDate.Date.ToString("yyyy-MM-dd");
+                        string vehicleClass2 = "";
+                        string brand = "";
+                        if (cbVehicleClass.SelectedValue != null)
+                        {
+                            vehicleClass2 = $" ajoneuvoluokka=(SELECT ID FROM Ajoneuvoluokka WHERE Kooditunnus = '{cbVehicleClass.SelectedValue.ToString()}') AND ";
+                        }
+                        if(txtBrand.Text != "")
+                        {
+                            brand = $" merkkiSelvakielinen='{txtBrand.Text}' AND ";
+                        }
+                        string query2 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(ensirekisterointipvm) as Value FROM Ajoneuvo WHERE{vehicleClass2}{brand} ensirekisterointipvm BETWEEN '{startDate}' AND '{endDate}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query2);
+                        break;
+                    case "Sähköhybridien määrä":
+                        string startDate2 = StartDate.Date.ToString("yyyy-MM-dd");
+                        string endDate2 = EndDate.Date.ToString("yyyy-MM-dd");
+                        string query3 = $"SELECT YEAR(ensirekisterointipvm) as Name, COUNT(sahkohybridi) as Value FROM Ajoneuvo WHERE sahkohybridi=1 AND ensirekisterointipvm BETWEEN '{startDate2}' AND '{endDate2}' GROUP BY YEAR(ensirekisterointipvm) ORDER BY Name DESC;";
+                        SearchResult = VehicleAPI.GetChartData(QueryBuilder.Table.Ajoneuvo, query3);
+                        break;
+                }
+                PieChart.DataSource = SearchResult;
+                PieChart.TitleMemberPath = "Name";
+                PieChart.ValueMemberPath = "Value";
+                dgData.ItemsSource = SearchResult;
+            }
+            catch (NullReferenceException)
+            {
+                MessageDialog dialog = new MessageDialog("Fill all enabled fields!");
+                dialog.Title = "Info";
+                await dialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.Title = "Exception";
+                await dialog.ShowAsync();
+            }
         }
     }
 }

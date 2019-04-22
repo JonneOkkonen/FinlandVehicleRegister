@@ -6,17 +6,52 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:FinlandVehicleRegister.Views"
+    xmlns:charts="using:Ailon.QuickCharts"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
     <Page.Background>
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="Charts" VerticalAlignment="Top" Foreground="White"></Button>
-        </StackPanel>
-		<StackPanel Orientation="Horizontal">
-			<Image Source="{Binding imgPieChart}"></Image>
-		</StackPanel>
+        <RelativePanel>
+            <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+            <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Charts" Margin="20, 20, 10, 10" FontSize="24" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Types:" Margin="20,8,0,5" Foreground="White"/>
+                            <ComboBox x:Name="cbType" Margin="20,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" SelectionChanged="cbType_SelectionChanged"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Date:" Margin="10, 8, 0, 5" Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <DatePicker x:Name="StartDate" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="200" IsEnabled="False"/>
+                                <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 0"></TextBlock>
+                                <DatePicker x:Name="EndDate" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="200" IsEnabled="False"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Vehicle Class:" Margin="20, 8, 0, 5" Foreground="White"/>
+                            <ComboBox x:Name="cbVehicleClass" Margin="20,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Vehicle Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
+                            <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" RequestedTheme="Dark" MinWidth="200" IsEnabled="False"/>
+                        </StackPanel>
+                        <Button Content="Search" x:Name="btnSearch" RequestedTheme="Dark" Margin="50,31,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinWidth="200" Click="btnSearch_Click"/>
+                    </StackPanel>
+                    <charts:PieChart x:Name="PieChart" RequestedTheme="Dark" Height="300" Margin="20" Grid.Row="1"/>
+                    <controls:DataGrid x:Name="dgData" RequestedTheme="Dark" Margin="20" IsReadOnly="True" AutoGenerateColumns="False">
+                        <controls:DataGrid.Columns>
+                            <controls:DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
+                            <controls:DataGridTextColumn Header="Value" Binding="{Binding Path=Value}"/>
+                        </controls:DataGrid.Columns>
+                    </controls:DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+        </RelativePanel>
     </Grid>
 </Page>
