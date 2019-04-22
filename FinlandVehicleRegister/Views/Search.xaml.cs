@@ -102,12 +102,12 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.vari, cbColor.SelectedValue.ToString());
                 }
 
-                if (dpFirstRegDate1.Date != null && dpFirstRegDate2.Date != null)
+                if (dpFirstRegDate1.Date != null && dpFirstRegDate2.Date != null && cbFirstRegDate.IsChecked == true)
                 {
                     searchquery.AddField(Field.Fields.ensirekisterointipvm, dpFirstRegDate1.Date.ToString("yyyy-MM-dd"), dpFirstRegDate2.Date.ToString("yyyy-MM-dd"));
                 }
 
-                if (dpDeployDate1.Date != null && dpDeployDate2.Date != null)
+                if (dpDeployDate1.Date != null && dpDeployDate2.Date != null && cbDeployDate.IsChecked == true)
                 {
                     searchquery.AddField(Field.Fields.kayttoonottopvm, dpDeployDate1.Date.ToString("yyyy-MM-dd"), dpDeployDate2.Date.ToString("yyyy-MM-dd"));
                 }
@@ -183,6 +183,33 @@ namespace FinlandVehicleRegister.Views
                 await dialog.ShowAsync();
             }
             this.Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
+        }
+
+        private void CbFirstRegDate_Click(object sender, RoutedEventArgs e)
+        {
+            if(cbFirstRegDate.IsChecked == true)
+            {
+                dpFirstRegDate1.IsEnabled = true;
+                dpFirstRegDate2.IsEnabled = true;
+            }else
+            {
+                dpFirstRegDate1.IsEnabled = false;
+                dpFirstRegDate2.IsEnabled = false;
+            }
+        }
+
+        private void CbDeployDate_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbDeployDate.IsChecked == true)
+            {
+                dpDeployDate1.IsEnabled = true;
+                dpDeployDate2.IsEnabled = true;
+            }
+            else
+            {
+                dpDeployDate1.IsEnabled = false;
+                dpDeployDate2.IsEnabled = false;
+            }
         }
     }
 }

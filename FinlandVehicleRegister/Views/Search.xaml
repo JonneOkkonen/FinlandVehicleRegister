@@ -13,19 +13,19 @@
     <Grid>
         <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
-            <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True">
+            <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" Margin="10,0,0,0">
                 <StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
                     <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"></TextBlock>
                     <TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                    <TextBlock Text="First register date:" Margin="10, 8, 0, 5" Foreground="White"/>
-                    <DatePicker x:Name="dpFirstRegDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <CheckBox x:Name="cbFirstRegDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="FirstRegistrationDate" Click="CbFirstRegDate_Click"/>
+                    <DatePicker x:Name="dpFirstRegDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
                     <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
-                    <DatePicker x:Name="dpFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
-                    <TextBlock Text="Deployment date:" Margin="10, 8, 0, 5" Foreground="White"/>
-                    <DatePicker x:Name="dpDeployDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <DatePicker x:Name="dpFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
+                    <CheckBox x:Name="cbDeployDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="Deployment Date" Click="CbDeployDate_Click"/>
+                    <DatePicker x:Name="dpDeployDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
                     <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"></TextBlock>
-                    <DatePicker x:Name="dpDeployDate2" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0"></DatePicker>
+                    <DatePicker x:Name="dpDeployDate2" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
                     <TextBlock Text="Serial Number:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtSerialNmb" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"></TextBox>
                     <TextBlock Text="Color:" Margin="10, 8, 0, 5" Foreground="White"/>
