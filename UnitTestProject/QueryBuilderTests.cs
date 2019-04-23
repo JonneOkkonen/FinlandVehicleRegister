@@ -20,7 +20,7 @@ namespace UnitTestProject
             query.AddField(Field.Fields.valmistenumero2, "123456789");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen='BMW' AND valmistenumero2='123456789' LIMIT 100;";
+            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen LIKE '%BMW%' AND valmistenumero2='123456789' LIMIT 100;";
             Assert.AreEqual(expected, actual);
         }
 
@@ -32,7 +32,7 @@ namespace UnitTestProject
             query.AddField(Field.Fields.merkkiSelvakielinen, "BMW");
             query.Build(QueryBuilder.QueryType.Select);
             string actual = query.QueryString;
-            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen='BMW' LIMIT 100;";
+            string expected = "SELECT * FROM Vehicle WHERE merkkiSelvakielinen LIKE '%BMW%' LIMIT 100;";
             Assert.AreEqual(expected, actual);
         }
 
