@@ -1,4 +1,4 @@
-# README
+# Asennusdokumentti
 
 ## 1. Asennus
 - Asennus tehdään sideloading menetelmällä.
