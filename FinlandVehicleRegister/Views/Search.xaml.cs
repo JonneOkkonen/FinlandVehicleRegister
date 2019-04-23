@@ -27,7 +27,7 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class Search : Page
     {
-
+        //List of options for the comboboxes used in the application
         private List<Option> vColor;
         private List<Option> vCarClass;
         private List<Option> vFrameType;
@@ -83,25 +83,29 @@ namespace FinlandVehicleRegister.Views
 
         async private void BtnDoSearch_Click(object sender, RoutedEventArgs e)
         {
+            //Upon clock perform the folllowing actions if possible.
             try
             {
                 QueryBuilder searchquery = new QueryBuilder();
+                //If Brand field is not empty, perform the following:
                 if (txtBrand.Text != "")
 
                 {
                     searchquery.AddField(Field.Fields.merkkiSelvakielinen, txtBrand.Text);
                 }
-
+                //If Model field is not empty, perform the following:
                 if (txtModel.Text != "")
                 {
                     searchquery.AddField(Field.Fields.mallimerkinta, txtModel.Text);
                 }
 
+                //If Color field is not empty, perform the following:
                 if (cbColor.SelectedValue != null)
                 {
                     searchquery.AddField(Field.Fields.vari, cbColor.SelectedValue.ToString());
                 }
 
+                //If First Registration Date field is not empty and the checkbox was checked to activate the field, perform the following:
                 if (dpFirstRegDate1.Date != null && dpFirstRegDate2.Date != null && cbFirstRegDate.IsChecked == true)
                 {
                     searchquery.AddField(Field.Fields.ensirekisterointipvm, dpFirstRegDate1.Date.ToString("yyyy-MM-dd"), dpFirstRegDate2.Date.ToString("yyyy-MM-dd"));
@@ -112,21 +116,25 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.kayttoonottopvm, dpDeployDate1.Date.ToString("yyyy-MM-dd"), dpDeployDate2.Date.ToString("yyyy-MM-dd"));
                 }
 
+                //If Fuel Type field is not empty, perform the following:
                 if (cbFuelType.SelectedValue != null)
                 {
                     searchquery.AddField(Field.Fields.kayttovoima, cbFuelType.SelectedValue.ToString());
                 }
 
+                //If Frame Type field is not empty, perform the following:
                 if (cbFrameType.SelectedValue != null)
                 {
                     searchquery.AddField(Field.Fields.korityyppi_pitkaselite, cbFrameType.SelectedValue.ToString());
                 }
 
+                //If County field is not empty, perform the following:
                 if (cbCounty.SelectedValue != null)
                 {
                     searchquery.AddField(Field.Fields.kunta, cbCounty.SelectedValue.ToString());
                 }
 
+                //If Gears field is not empty, perform the following:
                 if (txtGears.Text != "")
                 {
                     int value;
@@ -134,11 +142,13 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.vaihteisto, value.ToString());
                 }
 
+                //If Serial Number field is not empty, perform the following:
                 if (txtSerialNmb.Text != "")
                 {
                     searchquery.AddField(Field.Fields.valmistenumero2, txtSerialNmb.Text);
                 }
 
+                //If Co2 field is not empty and the input is in integer format, perform the following:
                 if (txtStartCo2.Text != "" && txtEndCo2.Text != "")
                 {
                     int start, end;
@@ -147,7 +157,8 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.Co2, start.ToString(), end.ToString());
                 }
 
-                if(txtStartMileage.Text != "" && txtEndMileage.Text != "")
+                //If Mileage field is not empty and the input is in integer format, perform the following:
+                if (txtStartMileage.Text != "" && txtEndMileage.Text != "")
                 {
                     int start, end;
                     if (int.TryParse(txtStartMileage.Text, out start) == false) throw new Exception("Mileage Start value isn't integer");
@@ -155,6 +166,7 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.matkamittarilukema, start.ToString(), end.ToString());
                 }
 
+                //If Mass field is not empty and the input is in integer format, perform the following:
                 if (txtStartMass.Text != "" && txtEndMass.Text != "")
                 {
                     int start, end;
@@ -163,6 +175,7 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.omamassa, start.ToString(), end.ToString());
                 }
 
+                //If Cylinder Cap field is not empty and the input is in integer format, perform the following:
                 if (txtStartCylinderCap.Text != "" && txtEndCylinderCap.Text != "")
                 {
                     int start, end;
@@ -171,6 +184,7 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.sylintereidenLkm, start.ToString(), end.ToString());
                 }
 
+                //If Power field is not empty and the input is in integer format, perform the following:
                 if (txtStartNetPower.Text != "" && txtEndNetPower.Text != "")
                 {
                     int start, end;
@@ -179,18 +193,22 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.suurinNettoteho, start.ToString(), end.ToString());
                 }
 
+                //If Car Class field is not empty, perform the following:
                 if (cbCarClass.SelectedValue != null)
                 {
                     searchquery.AddField(Field.Fields.ajoneuvoluokka_koodi, cbCarClass.SelectedValue.ToString());
                 }
 
+                //If Electric Hybrid field is checked, perform the following:
                 if (ckbElecHybrid.IsChecked == true)
                 {
                     searchquery.AddField(Field.Fields.sahkohybridi, "1");
                 }
 
+                //Build query based on Search Page filter user input
                 searchquery.Build(QueryBuilder.QueryType.Select, 1000);
                 SearchResult.Vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
+                //If the Search Result was not empty, save the Search Result to Main Page view.
                 if(SearchResult.Vehicles.Count > 0)
                 {
                     SearchHistory.AddItem(new SearchHistoryItem("Search", DateTime.Now, SearchResult.Vehicles.Count + " results", searchquery.QueryString, searchquery.FieldsToString()));
@@ -198,6 +216,7 @@ namespace FinlandVehicleRegister.Views
                     Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
                 }
             }
+            //Handle exceptions
             catch (Exception ex)
             {
                 MessageDialog dialog = new MessageDialog(ex.Message);
@@ -206,6 +225,7 @@ namespace FinlandVehicleRegister.Views
             }
         }
 
+        //Checkboxes to activate First Registration Date fields.
         private void CbFirstRegDate_Click(object sender, RoutedEventArgs e)
         {
             if(cbFirstRegDate.IsChecked == true)
@@ -219,6 +239,7 @@ namespace FinlandVehicleRegister.Views
             }
         }
 
+        //Checkboxes to activateDeployment Date fields.
         private void CbDeployDate_Click(object sender, RoutedEventArgs e)
         {
             if (cbDeployDate.IsChecked == true)

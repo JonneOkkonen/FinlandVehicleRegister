@@ -28,6 +28,7 @@ namespace FinlandVehicleRegister.Views
     /// </summary>
     public sealed partial class SearchResult : Page
     {
+        //Create a list from parameters and compile them to a list.
         public static List<Vehicle> Vehicles = new List<Vehicle>();
         public SearchResult()
         {
@@ -54,6 +55,7 @@ namespace FinlandVehicleRegister.Views
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
+            //Set the view back to Search Page upon click
             this.Frame.Navigate(typeof(Search), null, new SuppressNavigationTransitionInfo());
         }
     }
