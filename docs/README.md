@@ -3,7 +3,9 @@
 ## 1. Asennus
 - Asennus tehdään sideloading menetelmällä.
 - Varmista, että developer mode on kytketty päälle. Settings->Update&Security->ForDevelopers->Developer Mode
-- Varmista, että App Package ja Certifikaatti tiedosto ovat samassa kansiossa
+- Luo Windows App Certification Kit avulla testi certifikaatti ohjelmalle
+- Käytä Validate Store App vaihtoehtoa
+- Valitse App Package tiedosto ja validoi ohjelma
 - Avaa App Package tiedosto ja aloita asennus
 - Asennuksen päätyttyä ohjelman tulisi avautua automaattisesti
 
