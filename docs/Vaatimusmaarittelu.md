@@ -5,13 +5,12 @@
 1. [Tekijät](#tekijät)
 2. [Yleiskuvaus](#yleiskuvaus)
 3. [Kohderyhmä](#kohderyhmä)
-4. [Kayttöympäristö](#käyttöympäristö)
-5. [Käyttöympäristö](#kayttöympäristö)
-6. [Kayttäjäroolit](#kayttäjäroolit)
-7. [Toiminnot](#toiminnot)
-8. [Käyttötapaukset](#kayttötapaukset)
-9. [Työnjako](#työnjako)
-10. [Työaikasuunnitelma](#työaikasuunnitelma)
+4. [Käyttöympäristö](#käyttöympäristö)
+5. [Kayttäjäroolit](#käyttäjäroolit)
+6. [Toiminnot](#toiminnot)
+7. [Käyttötapaukset](#käyttötapaukset)
+8. [Työnjako](#työnjako)
+9. [Työaikasuunnitelma](#työaikasuunnitelma)
 
 ## Tekijät
 
@@ -29,7 +28,7 @@ Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliit
 - Yritykset, jotka käyttävät palvelua tiedonhakuun. 
 - Instituutit, jotka hakevat tietoa palvelusta.
 
-## Kayttöympäristö
+## Käyttöympäristö
 
 Windows 10 Devices:
 
