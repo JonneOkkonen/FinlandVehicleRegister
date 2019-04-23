@@ -10,31 +10,35 @@
 ## 2. Tietoa ohjelmasta
 - Ohjelmisto on Suomen ajoneuvojen rekisteri. Tieto on saatu Trafin rekisteristä avoin data sivulta. Sen avulla voidaan hakea yksittäisiä ajoneuvoja, useampia tai vaikka tarkastella suomen ajoneuvojen kokonaisrekisteritietoja.
         
-## 3. Kuvaruutukaappaukset tärkeimmistä käyttöliittymistä + lyhyet käyttöohjeet jollei "ilmiselvää"
+## 3. Kuvaruutukaappaukset tärkeimmistä käyttöliittymistä
 - Käyttöohjeet löytyvät ohjelman Help Page - näkymästä.
 -
         
 ## 4. Ohjelman tarvitsemat/mukana tulevat tiedostot/tietokannat
--
--
+- App Package (.appxbundle)
+- Security Certificate (.cer)
 
-## 5. Tiedossa olevat ongelmat ja bugit sekä jatkokehitysideat.
+## 5. Tiedossa olevat ongelmat ja bugit sekä jatkokehitysideat
 - Tieto tulee NoSQL muodossa, jolloin osa hakuvaihtoehdoista tulee omilla nimikkeillä, vaikka ne olisivat esimerkiksi samalta valmistajalta.
-- UTF-8 ei ole ohjelmassa, joten hakuvaihtoehdoissa skandinaaviset merkit näkyvät rikkinäisiltä merkeiltä. 
+- UTF-8 muunnos on tehty API:n puolella, mutta tästä huolimatta hakuvaihtoehdoissa skandinaaviset merkit näkyvät rikkinäisiltä merkeiltä. 
         
-## 6. Mitä opittu, mitkä olivat suurimmat haasteet, mitä kannattaisi tutkia/opiskella lisää jne.
+## 6. Mitä opittu, mitkä olivat suurimmat haasteet, mitä kannattaisi tutkia/opiskella lisää jne
 - Uudenlaista koodia ja ajattelutapaa.
 - Resurssien hyödyntämistä uudella tavalla.
 - Nähdä miten koodi ja graaffinen käyttöliittymä voidaan rakentaa yhdeksi kokonaisuudeksi.
 - Yksi suuri haaste oli saada hakukenttä ottamaan oikeat arvot rikkoutumatta matkan varrella.
         
 ## 7. Tekijät, vastuiden ja työmäärän jakautuminen.
-- Jonne Okkonen, TTV18S3. Vastasi Coresta (bisnes logiikka) ja unit testing osiosta. Oli osallisena dokumentaatiossa. Toteutti Views Charts sivun.
+- Jonne Okkonen, TTV18S3. Vastasi Coresta (bisnes logiikka), unit testing osiosta ja API:n/tietokannan luomisesta. Oli osallisena dokumentaatiossa. Toteutti Views Charts- ja HomePage-sivun.
 - Joonas Niinimäki, TTV18S3. Vastasi käyttöliittymän View osiosta ja Help Page laatimisesta. Oli osallisena dokumentaatiossa. Arvioitu aika ~74h
         
 ## 8. Tekijöiden arvosanojen ehdotus.
 
 ### Jonne Okkonen:
+
+Arvosana: 5
+
+LISÄÄ
 
 ### Joonas Niinimäki:  
 
