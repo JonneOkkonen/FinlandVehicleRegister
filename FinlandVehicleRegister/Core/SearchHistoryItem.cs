@@ -12,14 +12,16 @@ namespace FinlandVehicleRegister.Core
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string Results { get; set; }
-        public string Query;
+        public string Query { get; set; }
+        public string Parameters { get; set; }
 
-        public SearchHistoryItem(string name, DateTime date, string results, string query)
+        public SearchHistoryItem(string name, DateTime date, string results, string query, string parameters)
         {
             Name = name;
             Date = date;
             Results = results;
             Query = query;
+            Parameters = parameters;
         }
     }
 }
