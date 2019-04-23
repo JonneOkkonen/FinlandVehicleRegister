@@ -23,7 +23,7 @@
         - Yksi suuri haaste oli saada hakukenttä ottamaan oikeat arvot rikkoutumatta matkan varrella.
         
 ## 7. Tekijät, vastuiden ja työmäärän jakautuminen.
-        - Jonne Okkonen, TTV18S3. Vastasi Coresta (bisnes logiikka) ja unit testing osiosta. Oli osallisena dokumentaatiossa.
+        - Jonne Okkonen, TTV18S3. Vastasi Coresta (bisnes logiikka) ja unit testing osiosta. Oli osallisena dokumentaatiossa. Toteutti Views Charts sivun.
         - Joonas Niinimäki, TTV18S3. Vastasi käyttöliittymän View osiosta ja Help Page laatimisesta. Oli osallisena dokumentaatiossa. Arvioitu aika ~74h
         
 ## 8. Tekijöiden arvosanojen ehdotus.
