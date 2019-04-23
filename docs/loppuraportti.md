@@ -3,7 +3,7 @@
 ## 1. Asennus
 - Asennus tehdään sideloading menetelmällä.
 - Varmista, että developer mode on kytketty päälle. Settings->Update&Security->ForDevelopers->Developer Mode
-- Luo Windows App Certification Kit avulla testi certifikaatti ohjelmalle
+- Luo Windows App Certification Kit avulla testi sertifikaatti ohjelmalle
 - Käytä Validate Store App vaihtoehtoa
 - Valitse App Package tiedosto ja validoi ohjelma
 - Avaa App Package tiedosto ja aloita asennus
@@ -44,7 +44,15 @@
 
 Arvosana: 5
 
-LISÄÄ
+Tehtäväni projektissa:
+
+- Tietokannan luominen csv-datan pohjalta
+- API-rajapinnan toteutus PHP:llä
+- Core:n luominen eli luokkien toteutus
+- Charts ja HomePage sivujen käyttöliittymän ja toiminnallisuuden luonti
+- Yksikkötestien luominen
+
+Arvioisin tämän työn 5 arvosanan tasoiseksi, koska se täyttää kaikki asetetut vaatimukset ja ylittääkin ne paikoittain. Saimme luotua toimivan ja oikeaa käyttötapausta mallintavan järjestelmän.
 
 ### Joonas Niinimäki:  
 
