@@ -11,30 +11,32 @@
     <Grid>
         <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
-            <StackPanel Orientation="Vertical" RelativePanel.RightOf="NavigationBar" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
-                <TextBlock Text="Search History" Margin="20, 20, 10, 10" FontSize="24" Foreground="White"/>
-                <Custom:UniformGrid Margin="20" RequestedTheme="Dark" ColumnSpacing="24" RowSpacing="24">
-                    <ItemsControl x:Name="icSearchHistory">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="#1167B1" CornerRadius="5" Height="100" Width="300" Margin="20">
-                                    <StackPanel Orientation="Vertical" Margin="10">
-                                        <TextBlock Text="{Binding Name}"/>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Date: "/>
-                                            <TextBlock Margin="5,0,0,0" Text="{Binding Date}"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Results: "/>
-                                            <TextBlock Margin="5,0,0,0" Text="{Binding Results}"/>
-                                        </StackPanel>
+            <TextBlock Text="Search History" Margin="20, 20, 10, 10" FontSize="24" Foreground="White" RelativePanel.RightOf="NavigationBar"/>
+            <Custom:UniformGrid Margin="20,70,20,20" RequestedTheme="Dark" ColumnSpacing="20" RowSpacing="20" RelativePanel.RightOf="NavigationBar">
+                <ItemsControl x:Name="icSearchHistory">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="#1167B1" CornerRadius="5" Height="180" Width="300">
+                                <StackPanel Orientation="Vertical" Margin="10">
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Date: "/>
+                                        <TextBlock Margin="5,0,0,0" Text="{Binding Date}"/>
                                     </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </Custom:UniformGrid>
-            </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Results: "/>
+                                        <TextBlock Margin="5,0,0,0" Text="{Binding Results}"/>
+                                    </StackPanel>
+                                    <TextBlock Text="Parameters: "/>
+                                    <ScrollViewer>
+                                        <TextBox Text="{Binding Parameters}" TextWrapping="Wrap" Margin="0" IsReadOnly="True" Background="#1167B1" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="85"/>
+                                    </ScrollViewer>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Custom:UniformGrid>
         </RelativePanel>
     </Grid>
 </Page>

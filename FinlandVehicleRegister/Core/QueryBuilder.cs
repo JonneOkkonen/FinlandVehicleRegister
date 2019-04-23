@@ -109,5 +109,22 @@ namespace FinlandVehicleRegister.Core
         {
             fields.Add(new Field(field, value, value2));
         }
+
+        public string FieldsToString()
+        {
+            string result = "";
+            foreach(Field item in fields)
+            {
+                if(item.Value2 != null)
+                {
+                    result += $"{item.FieldName}: {item.Value} - {item.Value2}, ";
+                }
+                else
+                {
+                    result += $"{item.FieldName}: {item.Value}, ";
+                }
+            }
+            return result;
+        }
     }
 }

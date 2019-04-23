@@ -17,6 +17,7 @@ using FinlandVehicleRegister.Views;
 using System.Drawing;
 using FinlandVehicleRegister.Core;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -50,7 +51,6 @@ namespace FinlandVehicleRegister
 
             // Test SearchHistory
             LoadSearchHistory();
-
         }
 
         public async void LoadSearchHistory()

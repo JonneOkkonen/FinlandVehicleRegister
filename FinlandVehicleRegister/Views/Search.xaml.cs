@@ -193,7 +193,7 @@ namespace FinlandVehicleRegister.Views
                 SearchResult.Vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
                 if(SearchResult.Vehicles.Count > 0)
                 {
-                    SearchHistory.AddItem(new SearchHistoryItem("Search", DateTime.Now, SearchResult.Vehicles.Count + " results", searchquery.QueryString));
+                    SearchHistory.AddItem(new SearchHistoryItem("Search", DateTime.Now, SearchResult.Vehicles.Count + " results", searchquery.QueryString, searchquery.FieldsToString()));
                     SearchHistory.Save();
                     Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
                 }
