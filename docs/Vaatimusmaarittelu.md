@@ -21,7 +21,7 @@ Joonas Niinimäki, TTV18S3 (M3268)
 ## Yleiskuvaus
 
 Projekti on Suomen ajoneuvojen rekisteri. Data haetaan [Avoidata.fi](https://www.avoindata.fi/data/fi/dataset/ajoneuvojen-avoin-data/resource/70ecbacc-1878-4641-9b80-7f639c414a42)-sivulta ja sovellukseen data tuodaan itsetoteutetun API rajapinnan kautta.
-Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliittymä käyttäen C# ja XAML kieliä ja UWP-appia.
+Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliittymä käyttäen C# ja XAML kieliä ja UWP-appia. Projektilla voidaan hakea tietoa, filtteröidä hakuvaihtoehtoja, nähdä yleistä dataa graaffisesti esitettynä pie chart metodilla, sekä Main Page sivulta voi myös saada edelliset automaattisesti tallennetut haut ja uudelleen katsoa niitä jos käyttäjä haluaa.
 
 ## Kohderyhmä
 
@@ -99,11 +99,12 @@ Use cases.
 
 - Joonas tekee vaatimusmäärittelydokumentin
 - Jonne tekee loppuraportin
-- Kummatkin ohjelmoi toiminnallisuutta
-- Kummatkin sunnittelee käyttöliittymää
+- Kummatkin ohjelmoi toiminnallisuutta, Joonas Views osion.
+- Kummatkin sunnittelee käyttöliittymää, Jonne Coren ja unit testing osion.
 
 ## Työaikasuunnitelma
 
 - Työ aloitettiin 3.4.2019
 - Speksaus tehtiin 9.4.2019
-- Työtunteja suunniteltu ~86h
+- Työtunteja suunniteltu ~86h/henkilö
+- Jaettu tasaisesti viikoille, kuitenkin viimeisillä viikoilla suuremmat sprintit.
