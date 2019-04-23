@@ -40,6 +40,12 @@ Tekijät:
 
         - Jonne Okkonen:
         
-        - Joonas Niinimäki: Arvioin arvosanakseni 5. Vaikka minulla on vielä paljon opittavaa ohjelmoinnissa sillä onhan uranikin nyt lukuvuoden vanha, olen silti tyytyväinen siihen tulokseen mitä saimme aikaan ryhmätasolla ja yksilötasolla. Käyttöliittymä on selkeä ja intuitiivinen, joksei ihan täydellinen, mutta kurssin vaatimuksiin nähden mielestäni ihan sopivan haastava ja laaja työ. Kokonaisuus on mielestäni parhain, siinnä näkee kuinka eri osat ja palaset loksahtelevat kohdalleen vaatimusmäärittelyn tarpeiden mukaan.
-                            Toki on myös monta asiaa mitä haluaisin tuoda jatkossa lisää. Puhuin seminaaria edellisenä päivänä, että olisi hyvä jos Search kentissä väärässä syötteessä se ei pyyhkisi kaikkia kenttiä vaan vain sen väärän syötteen omaavan ja siihen kenttään ylle tulisi virheviesti ilmoitus. Tälläinen käytäntö on teollisuudessa normalisoitu ja hyväksi todettu, ja enemmällä ajalla tai jatkokehityksenä sellainen siihen tulisi. Myös haku kestää hieman turhan kauan, mutta teollisessa työssä serverit ovatkin talon sisäisiä tai vuokrattua tilaa palvelutarjoajalta, eikä yksittäisen ihmisen pyörittämää.
+        - Joonas Niinimäki: Arvioin arvosanakseni 5. Vaikka minulla on vielä paljon opittavaa ohjelmoinnissa sillä onhan uranikin nyt lukuvuoden vanha, olen silti tyytyväinen siihen tulokseen mitä saimme aikaan ryhmätasolla ja yksilötasolla.
+                            Käyttöliittymä on selkeä ja intuitiivinen, joksei ihan täydellinen, mutta kurssin vaatimuksiin nähden mielestäni ihan sopivan haastava ja laaja työ.
+                            Kokonaisuus on mielestäni parhain, siinnä näkee kuinka eri osat ja palaset loksahtelevat kohdalleen vaatimusmäärittelyn tarpeiden mukaan.
+                            
+                            Toki on myös monta asiaa mitä haluaisin tuoda jatkossa lisää. Puhuin seminaaria edellisenä päivänä, että olisi hyvä jos Search kentissä väärässä syötteessä se ei pyyhkisi kaikkia kenttiä,
+                            vaan vain sen väärän syötteen omaavan ja siihen kenttään ylle tulisi virheviesti ilmoitus.
+                            Tälläinen käytäntö on teollisuudessa normalisoitu ja hyväksi todettu, ja enemmällä ajalla tai jatkokehityksenä sellainen siihen tulisi.
+                            Myös haku kestää hieman turhan kauan, mutta teollisessa työssä serverit ovatkin talon sisäisiä tai vuokrattua tilaa palvelutarjoajalta, eikä yksittäisen ihmisen pyörittämää.
                             Loppujen lopuksi kurssi on ollut mukava ja opettavainen. Kyllä näillä eväillä on hyvä lähteä ensivuoteen opiskelemaan lisää ohjelmointia.
