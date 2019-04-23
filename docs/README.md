@@ -1,6 +1,8 @@
 # README
 
 ## 1. Asennus
+- Asennus tehdään sideloading menetelmällä.
+- Varmista, että developer mode on kytketty päälle. Settings->Update&Security->ForDevelopers->Developer Mode
 - 
 
 ## 2. Tietoa ohjelmasta
