@@ -39,6 +39,10 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar Datacontext to this page
             NavigationBar.DataContext = this;
+
+
         }
+
+        
     }
 }

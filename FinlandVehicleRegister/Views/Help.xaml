@@ -11,10 +11,178 @@
         <SolidColorBrush Color="#FF111010"></SolidColorBrush>
     </Page.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal">
+        <RelativePanel>
             <views:NavigationBar x:Name="NavigationBar"/>
-            <Button Content="Help Page" VerticalAlignment="Top" Foreground="White"></Button>
-        </StackPanel>
+            <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" Margin="10,0,0,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                <RichTextBlock Foreground="White" Margin="20">
+                    <Paragraph FontSize="30" Foreground="Cyan">
+                        Help Page
+                    </Paragraph>
+                    <Paragraph FontSize="20" Margin="0, 10, 0, 0" Foreground="Cyan">
+                        Contents
+                    </Paragraph>
+                    <Paragraph Margin="0,10,0,0" >
+                        <Bold>1. What is Finnish Car Register?</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>1.1 How do I use Finnish Car Register?</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>1.2 What can I do with Finnish Car Register</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>2. Charts</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>3. Search</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>3.1 Search filters</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>3.2 Search result and history</Bold>
+                    </Paragraph>
+                    <Paragraph>
+                        <Bold>4. F.A.Q</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        1. What is Finnish Car Register?
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        Finnish Car Register is a software designed by two ICT-Engineering students as part of a school project. It takes open free data of all Finnish registered vehicles on Trafi
+                        record and the application is able to show users data about their own vehicles and general statistics on vehicles used in Finland. With the application the viewer is able tofilter out
+                        and specify which vehicle they want to seek for, or alternatively they can seek every vehicle of the same type. Certain information is classified for security reasons and will not be shown in this application. We sincerely hope you have fun browsing the data!
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        1.1 How do I use Finnish Car Register?
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        This program contains a navigation bar you can use to switch between different tasks you want the application to perform. In the Main Page section you will see all your previous search history results and you can see some of the filter you used to retrieve the data. You can also click on them to show the previous search results again if you wish to see the information you sought before.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        In the Charts page you can filter out few options and see a graphical visualisation in the form of piecharts what kind of general vehicle data can be found in Finland. In the Search Page you can use filters to specify what kind of vehicles you seek or you can choose to seek all the similar types of vehicles located within the country. Again all the Search Results will be automatically saved to the Main Page section if you want to view the information again. In the Help Page section we implement guidance for our users and frequently asked questions.
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        1.2 What can I do with Finnish Car Register?
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        In Finnish Car Register you can seek data of different kind of registered legal vehicles in Finland, all taken from the local drivers lisence and and vehicle registry held by Trafi. The open vehicle data file can be found from this source address
+                        <Hyperlink>NavigateUri="https://www.avoindata.fi/data/fi/dataset/ajoneuvojen-avoin-data"</Hyperlink> and it can be retrieved free of charge or loyalties.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        A fair warning however, the files are quite large and contain a lot of data and they are intended for professional development use so you might want to consider using handy applications like ours instead. As previously stated you can go to Search Page and use as many filters you want, you can go and seek visualized pie charts for general information of registered vehicles or you can browse your search result history from the Main Page section and return your previous search results for viewing.
+                    </Paragraph>
+
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        2. Charts
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        In Charts Page you can browse general data from Finnish vehicles. Each color represents different results and you can also hower your mouse over the pie charts to see the exact percentile of each category viewable. You can use filters to search for differnt kind of general statistical data, and some filters enable for more filter options depending on what is relevant to the chosen filter. Additionally below the charts the user can browse data on a text format and see more information about the vehicles shown in the piecharts.
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        3. Search
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        In Search Page you can input to the search filter fields or you can choose to leave them empty. The Search Result will be constructed based on all the chosen filters and empty filters will return all data of that category. For example if you choose to filter everything but by Brand, it will show the user all vehicle brands that have the matching data otherwise.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        The more filters you apply, the more specific, accurate and narrower your search results will be and the less filters you use, the more inaccurate, general and wider range your search results will be. Your chosen searches will be saved to Main Page boxes and the user can freely go there and click on them browse previously saved searches again. If you want to instantly return back to the Search Page, you can click the little return arrow on the top left corner of Search Result Page indicating a return button.
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        3.1 Search Filters
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>1. Brand:</Bold> Brand is the selection of vehicle manufacturers such as Tesla, Volvo or Audi for example.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>2, Model:</Bold> Model designates the cars model type. Typically each brand manufacturer has their own naming standards for each model.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>3. First Registration Date:</Bold> Is the estimated date of when the vehicle was first registered. Estimate the range when the vehicle might have been registered. By checking the checkbox next to the header title you can activate the date picker.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>4. Deployment Date:</Bold> Shows when the vehicle was deployed in use. Boxes signify an estimated range of dates. By checking the checkbox next to the header title you can activate the date picker.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>5. Serial Number:</Bold> Is the vehicles serial number. Serial numbers are unique to every registed vehicle so this is good if you want a specific vehicle from the results.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>6. Color:</Bold> Color field can be used to show vehicles of same color or if left empty then show same type of vehicles of all color options.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>7. Vehicle Type:</Bold> Vehicle Type filter parses out what type of vehicle the sought vehicle type is, for example a buss or an automobile.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>8. Co2 Emissions:</Bold> Is an estimated number of C02 Emissions of the vehicle.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>9. Mileage (km):</Bold> Mileage shows how many recorded miles vehicles have driven. This can determine how used the vehicle is.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>10. Fuel Type:</Bold> Fuel Type indicates what fuel the vehicle uses, whether it is Diesel, gasoline or electric for example.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>11. Engine Size:</Bold> Engine Size field is an approximate estimation of the engine within the vehicle.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>12. Power (kw):</Bold> Power indicates how much power the vehicle can produce in use.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>13. Electric Hybrid:</Bold> Electric hybrid checkbox is a binary option to check if the vehicle is an electric hybrid or not. If checked, it is an electric hybrid and left unchecked the vehicle is not an electric hybrid.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>14. Number of Gears:</Bold> Number of gears shows how many gears the vehicle has available for use.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>15. County:</Bold> County can filter out vehicles based on Finnish county geolocations, for example what cars can be found from Tampere, Helsinki or Turku.
+                    </Paragraph>
+
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        3.2 Search Results and History
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        In Search Result Page section you will be able to observe the results based on the filters you applied in the Search Page. Here you will notice that some of the data was not filterable in the Search Page and this is because that is data that is rarely known by the user or relevant for the search. The arrow located on the left upper corner of Search Result Page returns you to Search Page where you can proceed to apply new filters of your choosing and search for different kind of data. You can scroll up and down as well as sideways to see what kind of information your filters produced. All the search results will be saved to Main Page section accessed trough the left side navigation bar, and you can browse the different bozes and click on them if you want to preview your previous search results.
+                    </Paragraph>
+                    <Paragraph Margin="0,40,0,0" FontSize="20" Foreground="Cyan">
+                        4. F.A.Q
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>1. Q: I am confused, the Search Page filters keep giving me error messages. What do I do?</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        1. A: Sometimes you may accidentally insert wrong kind of format to the field, please consult to Help Page for formatting information.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>2. Q: I am using the Chart Page to view graphs about Finnish Vehicles. I noticed some fields are active only sometimes. Why?</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        2. A: Chart filters have different options available for each selection. Some selections do not allow filters for every row because they are not relevant to the filter and to avoid the program from breking in use.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>3. Q: Where can I view my previous search results?</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        3. A: You can find your previous search result history acessing the Main Page from the navigation bar. Clicking them will show the result again.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>4. Q: The application is great but I have an idea how to improve it. Where can I contact the team?</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        4. A: Great! The developer team is always ready for feedback. Please, you can send them to our developers at M3225@student.jamk.fi or M3268@student.jamk.fi.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        <Bold>5. Q: I discovered a bug, where can I report this?</Bold>
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">
+                        5. A: You can send your pug reports in an e-mail to our developer team at M3225@student.jamk.fi or M3268@student.jamk.fi.
+                    </Paragraph>
+                    <Paragraph Margin="0, 20, 5, 0">´
+                        <Span Foreground="Cyan" FontSize="18">We Sincerely hope you enjoy using our application. Best wishes:</Span>
+                        <Span>- The dev. team</Span>
+                    </Paragraph>
+                </RichTextBlock>
+            </ScrollViewer>
+        </RelativePanel>
     </Grid>
 </Page>
 
