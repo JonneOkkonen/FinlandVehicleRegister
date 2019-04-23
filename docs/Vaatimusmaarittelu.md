@@ -11,6 +11,7 @@
 7. [Käyttötapaukset](#käyttötapaukset)
 8. [Työnjako](#työnjako)
 9. [Työaikasuunnitelma](#työaikasuunnitelma)
+10. [Linkit](#linkit)
 
 ## Tekijät
 
@@ -110,3 +111,7 @@ Use cases.
 - Speksaus tehtiin 9.4.2019
 - Työtunteja suunniteltu ~86h/henkilö
 - Jaettu tasaisesti viikoille, kuitenkin viimeisillä viikoilla suuremmat sprintit.
+
+## Linkit
+
+[Linkki luokkarakenteeseen](luokkarakenne.md)
