@@ -205,6 +205,11 @@ namespace FinlandVehicleRegister.Views
                 MessageDialog dialog = new MessageDialog(ex.Message);
                 dialog.Title = "Info";
                 await dialog.ShowAsync();
+
+                // Disable ProgressSpinner, Show Progress Text and Enable Search button
+                SearchProgress.IsActive = false;
+                txtSearchProgress.Text = "Done";
+                btnDoSearch.IsEnabled = true;
             }
         }
 
