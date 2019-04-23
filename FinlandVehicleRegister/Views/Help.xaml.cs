@@ -40,9 +40,6 @@ namespace FinlandVehicleRegister.Views
             // Set NavigationBar Datacontext to this page
             NavigationBar.DataContext = this;
 
-
-        }
-
-        
+        }       
     }
 }

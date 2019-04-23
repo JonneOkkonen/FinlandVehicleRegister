@@ -13,11 +13,14 @@
     </Page.Background>
     <Grid>
         <RelativePanel>
+            <!--Here is the Navigation Bar-->
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
             <StackPanel Orientation="Horizontal" RelativePanel.RightOf="NavigationBar">
+                <!--Here is the return to Search Page button-->
                 <Button x:Name="btnBack" Click="BtnBack_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" RequestedTheme="Dark"/>
                 <TextBlock Text="Search Result" Margin="10, 8, 0, 0" FontSize="20" Foreground="White"/>
             </StackPanel>
+            <!--Here begins the Search Result content section of the view page-->
             <controls:DataGrid x:Name="dgData" RequestedTheme="Dark" Margin="20, 45, 20, 40" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
             <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.RightOf="NavigationBar">
                 <TextBlock Text="Count: " Margin="20,10,5,0" Foreground="White"/>
