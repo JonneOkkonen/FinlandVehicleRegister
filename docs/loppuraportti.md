@@ -37,8 +37,12 @@
 ## 7. Tekijät, vastuiden ja työmäärän jakautuminen.
 - Jonne Okkonen, TTV18S3. Vastasi Coresta (bisnes logiikka), unit testing osiosta ja API:n/tietokannan luomisesta. Oli osallisena dokumentaatiossa. Toteutti Views Charts- ja HomePage-sivun.
 - Joonas Niinimäki, TTV18S3. Vastasi käyttöliittymän View osiosta ja Help Page laatimisesta. Oli osallisena dokumentaatiossa. Arvioitu aika ~74h
+
+## 8. Yksikkötestaus
+
+[Linkki yksikkötestaukseen](unitTests.md)
         
-## 8. Tekijöiden arvosanojen ehdotus.
+## 9. Tekijöiden arvosanojen ehdotus.
 
 ### Jonne Okkonen:
 
