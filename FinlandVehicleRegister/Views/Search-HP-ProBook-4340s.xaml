@@ -12,96 +12,68 @@
     </Page.Background>
     <Grid>
         <RelativePanel>
-            <!--This is the navigation bar-->
             <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
             <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" Margin="10,0,0,0">
                 <StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
-                    <!--Here begins all of the Search filters in the application-->
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"/>
-                        <ProgressRing x:Name="LoadingProgress" Margin="5,15,5,5"/>
-                        <TextBlock x:Name="txtLoadingProgress" Text="" Margin="5, 25, 0, 5" Foreground="White"/>
-                    </StackPanel>
-                    <!--Brand filter-->
+                    <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"/>
                     <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    <!--Model filter-->
                     <TextBlock Text="Model:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtModel" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                    <!--First Registration Date filters-->
-                    <CheckBox x:Name="cbFirstRegDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="First Registration Date:" Click="CbFirstRegDate_Click"/>
+                    <CheckBox x:Name="cbFirstRegDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="FirstRegistrationDate" Click="CbFirstRegDate_Click"/>
                     <DatePicker x:Name="dpFirstRegDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
                     <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"/>
                     <DatePicker x:Name="dpFirstRegDate2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
-                    <!--Deploy Date filters-->
-                    <CheckBox x:Name="cbDeployDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="Deployment Date:" Click="CbDeployDate_Click"/>
+                    <CheckBox x:Name="cbDeployDate" RequestedTheme="Dark" Margin="10, 8, 0, 5" Content="Deployment Date" Click="CbDeployDate_Click"/>
                     <DatePicker x:Name="dpDeployDate1" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
                     <TextBlock Text="To:" Foreground="White" Margin="10, 5, 10, 10"/>
                     <DatePicker x:Name="dpDeployDate2" Background="White" Margin="10, 0, 10, 0" HorizontalAlignment="Stretch" MinWidth="0" IsEnabled="False"/>
-                    <!--Serial Number filter-->
                     <TextBlock Text="Serial Number:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtSerialNmb" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                    <!--Color filter-->
                     <TextBlock Text="Color:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbColor" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    <!--Vehicle Type filter-->
                     <TextBlock Text="Vehicle type:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbCarClass" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    <!--Co2 filter-->
                     <TextBlock Text="Co2 emission:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtStartCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                         <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
                         <TextBox x:Name="txtEndCo2" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                     </StackPanel>
-                    <!--Mileage filter-->
                     <TextBlock Text="Mileage (km):" Margin="10, 8, 0, 5" Foreground="White"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtStartMileage" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                         <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
                         <TextBox x:Name="txtEndMileage" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                     </StackPanel>
-                    <!--Body Type filter-->
                     <TextBlock Text="Body Type" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbFrameType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    <!--Weight filter-->
                     <TextBlock Text="Weight (kg):" Margin="10, 8, 0, 5" Foreground="White"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtStartMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                         <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
                         <TextBox x:Name="txtEndMass" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                     </StackPanel>
-                    <!--Fuel Type filter-->
                     <TextBlock Text="Fuel type" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbFuelType" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
-                    <!--Engine Size filter-->
                     <TextBlock Text="Engine Size (cm3):" Margin="10, 8, 0, 5" Foreground="White"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtStartCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                         <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
                         <TextBox x:Name="txtEndCylinderCap" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                     </StackPanel>
-                    <!--Power filter-->
                     <TextBlock Text="Power (kw):" Margin="10, 8, 0, 5" Foreground="White"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="txtStartNetPower" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                         <TextBlock Text=" to " Margin="0,5,0,0" Foreground="White" TextAlignment="Center"/>
                         <TextBox x:Name="txtEndNetPower" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch" Width="171"/>
                     </StackPanel>
-                    <!--Electric Hybrid filter-->
                     <CheckBox x:Name="ckbElecHybrid" Margin="10, 10, 10, 0" HorizontalAlignment="Stretch" Content="Electric Hybrid" RequestedTheme="Dark"/>
-                    <!--Gears filter-->
                     <TextBlock Text="Number of Gears:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtGears" Background="White" Margin="10,0,10,0" HorizontalAlignment="Stretch"/>
-                    <!--County filter-->
                     <TextBlock Text="County:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbCounty" Height="30" Margin="10,0,10,20" HorizontalAlignment="Stretch" Background="White"  VerticalAlignment="Top"/>
-                    <!--This is the Search button below the filter list where upon click it sends to an event handler that shows the data based on the chosen options-->
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,100">
-                        <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click" Width="250"/>
-                        <ProgressRing x:Name="SearchProgress"/>
-                        <TextBlock x:Name="txtSearchProgress" Text="" Margin="10, 8, 0, 5" Foreground="White"/>
-                    </StackPanel>
+                    <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click"/>
                 </StackPanel>
             </ScrollViewer>
         </RelativePanel>

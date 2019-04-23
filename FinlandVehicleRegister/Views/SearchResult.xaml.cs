@@ -53,6 +53,11 @@ namespace FinlandVehicleRegister.Views
             txtResultCount.Text = Vehicles.Count.ToString();
         }
 
+        /// <summary>
+        /// Back Button Event Handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             //Set the view back to Search Page upon click

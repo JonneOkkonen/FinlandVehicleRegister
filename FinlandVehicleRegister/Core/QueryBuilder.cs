@@ -25,6 +25,9 @@ namespace FinlandVehicleRegister.Core
             Select
         }
 
+        /// <summary>
+        /// Tablelist (V* = VIEW)  
+        /// </summary>
         public enum Table
         {
             VAjoneuvoluokka,
@@ -43,11 +46,13 @@ namespace FinlandVehicleRegister.Core
             ChartKorityyppi,
             Ajoneuvo
         }
-        
+
         /// <summary>
-        /// Builds Basic Query based on query type and given fields
+        ///  Builds Basic Query based on query type, table, view limit and given fields
         /// </summary>
         /// <param name="type"></param>
+        /// <param name="limit"></param>
+        /// <param name="table"></param>
         public void Build(QueryType type, int limit = 100, Table table = Table.Vehicle)
         {
             switch(type)
@@ -57,6 +62,7 @@ namespace FinlandVehicleRegister.Core
                     if (fields.Count != 0)
                     {
                         queryString += " WHERE ";
+                        // Last Field
                         Field last = fields.Last();
                         foreach (Field f in fields)
                         {
@@ -105,11 +111,21 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
+        /// <summary>
+        /// Add Field to Query WHERE Clause
+        /// </summary>
+        /// <param name="field"></param>
+        /// <param name="value"></param>
+        /// <param name="value2"></param>
         public void AddField(Field.Fields field, string value, string value2 = null)
         {
             fields.Add(new Field(field, value, value2));
         }
 
+        /// <summary>
+        /// Return all fields from field list in single string
+        /// </summary>
+        /// <returns></returns>
         public string FieldsToString()
         {
             string result = "";

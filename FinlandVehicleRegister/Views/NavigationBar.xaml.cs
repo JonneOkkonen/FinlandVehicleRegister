@@ -25,11 +25,16 @@ namespace FinlandVehicleRegister.Views
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// MenuItem Click EventHandler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //Upon click the page sets itself to a different view.
             string button = ((Button)sender).Name.ToString();
-            //These are all the different cases that change the view based on user input
+
+            // Change to correct page without transition
             switch(button)
             {
                 case "btnHomePage":

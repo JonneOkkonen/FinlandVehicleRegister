@@ -18,6 +18,7 @@ using System.Drawing;
 using FinlandVehicleRegister.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Animation;
+using Microsoft.Toolkit.Uwp.UI.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -53,17 +54,42 @@ namespace FinlandVehicleRegister
             LoadSearchHistory();
         }
 
+        /// <summary>
+        /// Load Search History from File
+        /// </summary>
         public async void LoadSearchHistory()
         {
             try
             {
                 SearchHistory.Read();
-                icSearchHistory.ItemsSource = SearchHistory.List;
+                HistoryList.ItemsSource = SearchHistory.List;
             }
             catch (Exception ex)
             {
                 MessageDialog dialog = new MessageDialog(ex.Message);
                 dialog.Title = "Error";
+                await dialog.ShowAsync();
+            }
+        }
+
+        async private void HistoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SearchHistoryItem item = (SearchHistoryItem)HistoryList.SelectedItem;
+            try
+            {
+                // Active ProgressSpinner and Show Progress Text
+                SearchProgress.IsActive = true;
+                txtSearchProgress.Text = "Searching...";
+                SearchResult.Vehicles = await VehicleAPI.GetVehiclesAsync(item.Query);
+                // Disable ProgressSpinner and Show Progress Text
+                SearchProgress.IsActive = false;
+                txtSearchProgress.Text = "";
+                if (SearchResult.Vehicles.Count > 0) Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.Title = "Info";
                 await dialog.ShowAsync();
             }
         }
