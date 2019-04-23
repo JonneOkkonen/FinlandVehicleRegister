@@ -12,7 +12,7 @@
     </Page.Background>
     <Grid>
         <RelativePanel>
-            <views:NavigationBar x:Name="NavigationBar"/>
+            <views:NavigationBar x:Name="NavigationBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
             <!--Here Begins Help Page contents, starting with scroll bar-->
             <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" Margin="10,0,0,0" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                 <RichTextBlock Foreground="White" Margin="20">
