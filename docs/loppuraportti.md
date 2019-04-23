@@ -1,4 +1,4 @@
-# Asennusdokumentti
+# Loppuraportti
 
 ## 1. Asennus
 - Asennus tehdään sideloading menetelmällä.
