@@ -54,6 +54,9 @@ namespace FinlandVehicleRegister
             LoadSearchHistory();
         }
 
+        /// <summary>
+        /// Load Search History from File
+        /// </summary>
         public async void LoadSearchHistory()
         {
             try

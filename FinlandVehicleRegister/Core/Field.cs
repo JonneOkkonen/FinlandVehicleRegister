@@ -56,6 +56,12 @@ namespace FinlandVehicleRegister.Core
         public string Value { get; set; }
         public string Value2 { get; set; }
 
+        /// <summary>
+        /// Default constructor for Field
+        /// </summary>
+        /// <param name="fieldName"></param>
+        /// <param name="value"></param>
+        /// <param name="value2"></param>
         public Field(Fields fieldName, string value, string value2 = null)
         {
             FieldName = fieldName;

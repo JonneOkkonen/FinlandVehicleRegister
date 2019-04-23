@@ -78,8 +78,7 @@ namespace FinlandVehicleRegister.Core
                     }
                 }
                 return vehicles;
-            }
-            catch
+            }catch
             {
                 throw;
             }
@@ -192,8 +191,7 @@ namespace FinlandVehicleRegister.Core
                     }
                 }
                 return values;
-            }
-            catch
+            }catch
             {
                 throw;
             }
