@@ -14,7 +14,11 @@
         
 ## 3. Kuvaruutukaappaukset tärkeimmistä käyttöliittymistä
 - Käyttöohjeet löytyvät ohjelman Help Page - näkymästä.
--
+![](Images/homepage.PNG)
+![](Images/searchpage.PNG)
+![](Images/searchresultpage.PNG)
+![](Images/chartspage.PNG)
+![](Images/helppage.PNG)
         
 ## 4. Ohjelman tarvitsemat/mukana tulevat tiedostot/tietokannat
 - App Package (.appxbundle)
