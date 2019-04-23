@@ -3,7 +3,9 @@
 ## 1. Asennus
 - Asennus tehdään sideloading menetelmällä.
 - Varmista, että developer mode on kytketty päälle. Settings->Update&Security->ForDevelopers->Developer Mode
-- 
+- Varmista, että App Package ja Certifikaatti tiedosto ovat samassa kansiossa
+- Avaa App Package tiedosto ja aloita asennus
+- Asennuksen päätyttyä ohjelman tulisi avautua automaattisesti
 
 ## 2. Tietoa ohjelmasta
 - Ohjelmisto on Suomen ajoneuvojen rekisteri. Tieto on saatu Trafin rekisteristä avoin data sivulta. Sen avulla voidaan hakea yksittäisiä ajoneuvoja, useampia tai vaikka tarkastella suomen ajoneuvojen kokonaisrekisteritietoja.
