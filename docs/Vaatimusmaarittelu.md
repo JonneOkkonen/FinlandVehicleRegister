@@ -1,4 +1,4 @@
-# Vaatimusmäärittely doc
+# Vaatimusmäärittely
 
 ## Sisällysluettelo
 
