@@ -59,12 +59,28 @@ namespace FinlandVehicleRegister
             try
             {
                 SearchHistory.Read();
-                icSearchHistory.ItemsSource = SearchHistory.List;
+                HistoryList.ItemsSource = SearchHistory.List;
             }
             catch (Exception ex)
             {
                 MessageDialog dialog = new MessageDialog(ex.Message);
                 dialog.Title = "Error";
+                await dialog.ShowAsync();
+            }
+        }
+
+        async private void HistoryList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SearchHistoryItem item = (SearchHistoryItem)HistoryList.SelectedItem;
+            try
+            {
+                SearchResult.Vehicles = VehicleAPI.GetVehicles(item.Query);
+                if (SearchResult.Vehicles.Count > 0) Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.Title = "Info";
                 await dialog.ShowAsync();
             }
         }
