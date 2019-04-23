@@ -49,36 +49,7 @@ namespace FinlandVehicleRegister.Views
             titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(1, 70, 70, 70);
             // Set NavigationBar Datacontext to this page
             NavigationBar.DataContext = this;
-
-            //Retrieve data to Color combobox
-            vColor = VehicleAPI.GetOptions(QueryBuilder.Table.VVari);
-            cbColor.ItemsSource = vColor;
-            cbColor.SelectedValuePath = "Value";
-            cbColor.DisplayMemberPath = "Value";
-
-            //Retrieve data to FuelType combobox
-            vFuelType = VehicleAPI.GetOptions(QueryBuilder.Table.VKayttovoima);
-            cbFuelType.ItemsSource = vFuelType;
-            cbFuelType.SelectedValuePath = "Value";
-            cbFuelType.DisplayMemberPath = "Value";
-
-            //Retrieve data to FrameType combobox
-            vFrameType = VehicleAPI.GetOptions(QueryBuilder.Table.VKorityyppi);
-            cbFrameType.ItemsSource = vFrameType;
-            cbFrameType.SelectedValuePath = "Value";
-            cbFrameType.DisplayMemberPath = "Value";
-
-            //Retrieve data to County combobox
-            vCounty = VehicleAPI.GetOptions(QueryBuilder.Table.VKunta);
-            cbCounty.ItemsSource = vCounty;
-            cbCounty.SelectedValuePath = "Value";
-            cbCounty.DisplayMemberPath = "Value";
-
-            //Retrieve data to Car Class combobox
-            vCarClass = VehicleAPI.GetOptions(QueryBuilder.Table.VAjoneuvoluokka);
-            cbCarClass.ItemsSource = vCarClass;
-            cbCarClass.SelectedValuePath = "Value";
-            cbCarClass.DisplayMemberPath = "Value";
+            LoadComboBoxItems();
         }
 
         async private void BtnDoSearch_Click(object sender, RoutedEventArgs e)
@@ -205,14 +176,26 @@ namespace FinlandVehicleRegister.Views
                     searchquery.AddField(Field.Fields.sahkohybridi, "1");
                 }
 
-                //Build query based on Search Page filter user input
+                // Build Query and set limit to 100
                 searchquery.Build(QueryBuilder.QueryType.Select, 1000);
-                SearchResult.Vehicles = VehicleAPI.GetVehicles(searchquery.QueryString);
-                //If the Search Result was not empty, save the Search Result to Main Page view.
-                if(SearchResult.Vehicles.Count > 0)
+
+                // Activate ProgressSpinner, Show Progress Text and Disable Search button
+                SearchProgress.IsActive = true;
+                txtSearchProgress.Text = "Searching...";
+                btnDoSearch.IsEnabled = false;
+                // Load Vehicles from API asynchronously
+                SearchResult.Vehicles = await VehicleAPI.GetVehiclesAsync(searchquery.QueryString);
+                // Disable ProgressSpinner, Show Progress Text and Enable Search button
+                SearchProgress.IsActive = false;
+                txtSearchProgress.Text = "Done";
+                btnDoSearch.IsEnabled = true;
+                // If there was no result, stay in search page
+                if (SearchResult.Vehicles.Count > 0)
                 {
+                    // Add Search to History
                     SearchHistory.AddItem(new SearchHistoryItem("Search", DateTime.Now, SearchResult.Vehicles.Count + " results", searchquery.QueryString, searchquery.FieldsToString()));
                     SearchHistory.Save();
+                    // Navigate to SearchResult page
                     Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
                 }
             }
@@ -225,7 +208,11 @@ namespace FinlandVehicleRegister.Views
             }
         }
 
-        //Checkboxes to activate First Registration Date fields.
+        /// <summary>
+        /// Enable/Disable FirstRegistrationDate based on selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CbFirstRegDate_Click(object sender, RoutedEventArgs e)
         {
             if(cbFirstRegDate.IsChecked == true)
@@ -239,7 +226,11 @@ namespace FinlandVehicleRegister.Views
             }
         }
 
-        //Checkboxes to activateDeployment Date fields.
+        /// <summary>
+        /// Enable/Disable DeployDate based on selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CbDeployDate_Click(object sender, RoutedEventArgs e)
         {
             if (cbDeployDate.IsChecked == true)
@@ -252,6 +243,50 @@ namespace FinlandVehicleRegister.Views
                 dpDeployDate1.IsEnabled = false;
                 dpDeployDate2.IsEnabled = false;
             }
+        }
+
+        /// <summary>
+        /// Load ComboBox Items from API
+        /// </summary>
+        private async void LoadComboBoxItems()
+        {
+            // Activate ProgressSpinner and Show progress text
+            LoadingProgress.IsActive = true;
+            txtLoadingProgress.Text = "Loading values...";
+
+            //Retrieve data to Color combobox
+            vColor = await VehicleAPI.GetOptionsAsync(QueryBuilder.Table.VVari);
+            cbColor.ItemsSource = vColor;
+            cbColor.SelectedValuePath = "Value";
+            cbColor.DisplayMemberPath = "Value";
+
+            //Retrieve data to FuelType combobox
+            vFuelType = await VehicleAPI.GetOptionsAsync(QueryBuilder.Table.VKayttovoima);
+            cbFuelType.ItemsSource = vFuelType;
+            cbFuelType.SelectedValuePath = "Value";
+            cbFuelType.DisplayMemberPath = "Value";
+
+            //Retrieve data to FrameType combobox
+            vFrameType = await VehicleAPI.GetOptionsAsync(QueryBuilder.Table.VKorityyppi);
+            cbFrameType.ItemsSource = vFrameType;
+            cbFrameType.SelectedValuePath = "Value";
+            cbFrameType.DisplayMemberPath = "Value";
+
+            //Retrieve data to County combobox
+            vCounty = await VehicleAPI.GetOptionsAsync(QueryBuilder.Table.VKunta);
+            cbCounty.ItemsSource = vCounty;
+            cbCounty.SelectedValuePath = "Value";
+            cbCounty.DisplayMemberPath = "Value";
+
+            //Retrieve data to Car Class combobox
+            vCarClass = await VehicleAPI.GetOptionsAsync(QueryBuilder.Table.VAjoneuvoluokka);
+            cbCarClass.ItemsSource = vCarClass;
+            cbCarClass.SelectedValuePath = "Value";
+            cbCarClass.DisplayMemberPath = "Value";
+
+            // Disable ProgressSpinner and Show progress text
+            LoadingProgress.IsActive = false;
+            txtLoadingProgress.Text = "";
         }
     }
 }

@@ -36,6 +36,22 @@ namespace FinlandVehicleRegister.Core
         }
 
         /// <summary>
+        /// Get vehicles from API asynchronously
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        public static Task<List<Vehicle>> GetVehiclesAsync(string query)
+        {
+            try
+            {
+                return Task.Run(() => GetVehicles(query));
+            }catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Get vehicles from API (limit 100)
         /// </summary>
         /// <param name="query"></param>
@@ -69,6 +85,28 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
+        /// <summary>
+        /// Get Options from API asynchronously
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
+        public static Task<List<Option>> GetOptionsAsync(QueryBuilder.Table table)
+        {
+            try
+            {
+                return Task.Run(() => GetOptions(table));
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Get Options from API
+        /// </summary>
+        /// <param name="table"></param>
+        /// <returns></returns>
         public static List<Option> GetOptions(QueryBuilder.Table table)
         {
             try
@@ -99,6 +137,30 @@ namespace FinlandVehicleRegister.Core
             }
         }
 
+        /// <summary>
+        /// Get ChartData from API asynchronously
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="customQuery"></param>
+        /// <returns></returns>
+        public static Task<List<ChartItem>> GetChartDataAsync(QueryBuilder.Table table, string customQuery = null)
+        {
+            try
+            {
+                return Task.Run(() => GetChartData(table, customQuery));
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Get ChartData from API
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="customQuery"></param>
+        /// <returns></returns>
         public static List<ChartItem> GetChartData(QueryBuilder.Table table, string customQuery = null)
         {
             try

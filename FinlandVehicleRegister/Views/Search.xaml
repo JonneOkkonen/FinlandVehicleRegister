@@ -17,7 +17,11 @@
             <ScrollViewer RelativePanel.RightOf="NavigationBar" RelativePanel.AlignRightWithPanel="True" Margin="10,0,0,0">
                 <StackPanel Margin="0" MinWidth="400" MaxWidth='400' HorizontalAlignment="Left">
                     <!--Here begins all of the Search filters in the application-->
-                    <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Search" Margin="10, 20, 10, 10" FontSize="24" Foreground="White"/>
+                        <ProgressRing x:Name="LoadingProgress" Margin="5,15,5,5"/>
+                        <TextBlock x:Name="txtLoadingProgress" Text="" Margin="5, 25, 0, 5" Foreground="White"/>
+                    </StackPanel>
                     <!--Brand filter-->
                     <TextBlock Text="Brand:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <TextBox x:Name="txtBrand" Margin="10,0,10,0" HorizontalAlignment="Stretch" Background="White"/>
@@ -93,7 +97,11 @@
                     <TextBlock Text="County:" Margin="10, 8, 0, 5" Foreground="White"/>
                     <ComboBox x:Name="cbCounty" Height="30" Margin="10,0,10,20" HorizontalAlignment="Stretch" Background="White"  VerticalAlignment="Top"/>
                     <!--This is the Search button below the filter list where upon click it sends to an event handler that shows the data based on the chosen options-->
-                    <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Search" x:Name="btnDoSearch" RequestedTheme="Dark" Margin="10,0,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Click="BtnDoSearch_Click" Width="250"/>
+                        <ProgressRing x:Name="SearchProgress"/>
+                        <TextBlock x:Name="txtSearchProgress" Text="" Margin="10, 8, 0, 5" Foreground="White"/>
+                    </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </RelativePanel>

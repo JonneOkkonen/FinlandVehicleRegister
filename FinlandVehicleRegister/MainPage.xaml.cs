@@ -74,7 +74,13 @@ namespace FinlandVehicleRegister
             SearchHistoryItem item = (SearchHistoryItem)HistoryList.SelectedItem;
             try
             {
-                SearchResult.Vehicles = VehicleAPI.GetVehicles(item.Query);
+                // Active ProgressSpinner and Show Progress Text
+                SearchProgress.IsActive = true;
+                txtSearchProgress.Text = "Searching...";
+                SearchResult.Vehicles = await VehicleAPI.GetVehiclesAsync(item.Query);
+                // Disable ProgressSpinner and Show Progress Text
+                SearchProgress.IsActive = false;
+                txtSearchProgress.Text = "";
                 if (SearchResult.Vehicles.Count > 0) Frame.Navigate(typeof(SearchResult), null, new SuppressNavigationTransitionInfo());
             }
             catch (Exception ex)
