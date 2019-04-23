@@ -56,7 +56,7 @@ namespace FinlandVehicleRegister.Core
         [JsonProperty("iskutilavuus", NullValueHandling = NullValueHandling.Ignore)]
         public int Iskutilavuus { get; set; }
         [JsonProperty("suurinNettoteho", NullValueHandling = NullValueHandling.Ignore)]
-        public int SuurinNettoteho { get; set; }
+        public string SuurinNettoteho { get; set; }
         [JsonProperty("sylintereidenLkm", NullValueHandling = NullValueHandling.Ignore)]
         public int SylintereidenLkm { get; set; }
         [JsonProperty("ahdin", NullValueHandling = NullValueHandling.Ignore)]
