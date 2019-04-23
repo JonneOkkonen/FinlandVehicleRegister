@@ -32,6 +32,7 @@ Sen jälkeen Visual Studiota käyttäen on luotu toiminnallisuus ja käyttöliit
 ## Kayttöympäristö
 
 Windows 10 Devices:
+
 - Newtonsoft (JSON)
 - C#
 - VisualStudio
@@ -48,6 +49,7 @@ Windows 10 Devices:
 ## Toiminnot
 
 Suomen ajoneuvojen tietokannasta voidaan hakea:
+
 - Lukumäärä
 - Merkki
 - Malli
@@ -90,6 +92,7 @@ Suomen ajoneuvojen tietokannasta voidaan hakea:
 ## Käyttötapaukset
 
 Use cases.
+
 - Matti meikäläinen hakee palvelusta tietoa omasta autostaan, hän on menossa merkkiliikekorjaukseen ja hänen on hyvä tietää tarkkaa tietoa omasta autostaan.
 - Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
 - Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
