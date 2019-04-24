@@ -101,7 +101,7 @@ Use cases.
 
 ## Wireframe
 
-![](docs/Images/WireFrame.PNG)
+![](Images/WireFrame.PNG)
 
 ## Työnjako
 
