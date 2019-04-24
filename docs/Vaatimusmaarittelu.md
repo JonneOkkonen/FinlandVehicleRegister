@@ -9,9 +9,10 @@
 5. [Kayttäjäroolit](#käyttäjäroolit)
 6. [Toiminnot](#toiminnot)
 7. [Käyttötapaukset](#käyttötapaukset)
-8. [Työnjako](#työnjako)
-9. [Työaikasuunnitelma](#työaikasuunnitelma)
-10. [Linkit](#linkit)
+8. [Wireframe](#Wireframe)
+9. [Työnjako](#työnjako)
+10. [Työaikasuunnitelma](#työaikasuunnitelma)
+11. [Linkit](#linkit)
 
 ## Tekijät
 
@@ -97,6 +98,10 @@ Use cases.
 - Liisa Lukkarinen on ostamassa uutta autoa, mutta hän ei ole varma valinnastaan. Hän hakee palvelusta tietoa vaihtoehdoista ja valitsee tämän perusteella parhaan vaihtoehdon itselleen.
 - Pertti Paviljonki on katsastuksessa töissä ja hän haluaa tietää katsastukseen tuodusta autosta enemmän. Käyttäen palvelua hän saa tarvitsemansa tiedon auton tiedoista.
 - Vilma Vilkas on töissä autovuokraamossa, ja hänen täytyy tietää autojen tiedot tarkalleen jäljittääkseen vuokrattuja autoja, niiden kuntoa ja muuta tarpeellista tietoa liikeen autoista.
+
+## Wireframe
+
+![](docs/Images/WireFrame.PNG)
 
 ## Työnjako
 
